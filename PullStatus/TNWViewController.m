@@ -9,7 +9,9 @@
 #import "TNWViewController.h"
 #import "NVSlideMenuController.h"
 
-@interface TNWViewController ()
+@interface TNWViewController () {
+    BOOL isMenuOpen;
+}
 
 @end
 
@@ -18,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    isMenuOpen = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,8 +31,20 @@
 
 - (IBAction)settingsDidPress:(id)sender {
     NSLog(@"Settings was pressed");
-    
-    [self.slideMenuController openMenuAnimated:YES completion:nil];
+    if (isMenuOpen) [self.slideMenuController closeMenuAnimated:YES completion:nil];
+    else [self.slideMenuController openMenuAnimated:YES completion:nil];
+}
+
+#pragma mark - Slide callbacks
+
+- (void)viewDidSlideIn:(BOOL)animated inSlideMenuController:(NVSlideMenuController *)slideMenuController {
+    isMenuOpen = NO;
+    NSLog(@"Menu is closed %d", isMenuOpen);
+}
+
+- (void)viewDidSlideOut:(BOOL)animated inSlideMenuController:(NVSlideMenuController *)slideMenuController {
+    isMenuOpen = YES;
+    NSLog(@"Menu is open %d", isMenuOpen);
 }
 
 @end
