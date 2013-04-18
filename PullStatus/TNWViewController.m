@@ -26,4 +26,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)settingsDidPress:(id)sender {
+    NSLog(@"Settings was pressed");
+}
 @end
