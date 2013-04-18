@@ -7,6 +7,7 @@
 //
 
 #import "TNWViewController.h"
+#import "NVSlideMenuController.h"
 
 @interface TNWViewController ()
 
@@ -28,5 +29,7 @@
 
 - (IBAction)settingsDidPress:(id)sender {
     NSLog(@"Settings was pressed");
+
+    [self.slideMenuController openMenuAnimated:YES completion:nil];
 }
 @end

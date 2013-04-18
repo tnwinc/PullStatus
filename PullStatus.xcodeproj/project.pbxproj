@@ -23,12 +23,16 @@
 		24232A77172065F00079A6D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A52172065F00079A6D4 /* Foundation.framework */; };
 		24232A7F172065F00079A6D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24232A7D172065F00079A6D4 /* InfoPlist.strings */; };
 		24232A82172065F00079A6D4 /* PullStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A81172065F00079A6D4 /* PullStatusTests.m */; };
+		24232A8C17207C7D0079A6D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A8B17207C7D0079A6D4 /* QuartzCore.framework */; };
+		24232A9217207FB10079A6D4 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24232A9117207FB10079A6D4 /* SettingsView.xib */; };
+		24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A941720803F0079A6D4 /* TNWSettingsViewController.m */; };
 		4B40A2B4172068FA00C26D58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B3172068FA00C26D58 /* Default.png */; };
 		4B40A2B6172068FE00C26D58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B5172068FE00C26D58 /* Default@2x.png */; };
 		4B40A2B81720690100C26D58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B71720690100C26D58 /* Default-568h@2x.png */; };
 		4B40A2BA172069EE00C26D58 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B9172069EE00C26D58 /* icon-57.png */; };
 		4B40A2BC172069F100C26D58 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2BB172069F100C26D58 /* icon-57@2x.png */; };
 		4BA6DD1717207E100070533F /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA6DD1517207E100070533F /* gear.png */; };
+		F6BF12BF35FA4EECA50C948C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343C680603D34D15944B5E7A /* libPods.a */; };
 		4BA6DD1817207E100070533F /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA6DD1617207E100070533F /* gear@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +69,18 @@
 		24232A7E172065F00079A6D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24232A80172065F00079A6D4 /* PullStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullStatusTests.h; sourceTree = "<group>"; };
 		24232A81172065F00079A6D4 /* PullStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullStatusTests.m; sourceTree = "<group>"; };
+		24232A8B17207C7D0079A6D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		24232A9117207FB10079A6D4 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		24232A931720803F0079A6D4 /* TNWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWSettingsViewController.h; sourceTree = "<group>"; };
+		24232A941720803F0079A6D4 /* TNWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWSettingsViewController.m; sourceTree = "<group>"; };
+		343C680603D34D15944B5E7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B40A2B3172068FA00C26D58 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4B40A2B5172068FE00C26D58 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4B40A2B71720690100C26D58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4B40A2B9172069EE00C26D58 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
 		4B40A2BB172069F100C26D58 /* icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57@2x.png"; sourceTree = "<group>"; };
 		4BA6DD1517207E100070533F /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		AA6874E509464302A80B6890 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		4BA6DD1617207E100070533F /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,9 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24232A8C17207C7D0079A6D4 /* QuartzCore.framework in Frameworks */,
 				24232A51172065F00079A6D4 /* UIKit.framework in Frameworks */,
 				24232A53172065F00079A6D4 /* Foundation.framework in Frameworks */,
 				24232A55172065F00079A6D4 /* CoreGraphics.framework in Frameworks */,
+				F6BF12BF35FA4EECA50C948C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +122,7 @@
 				24232A7A172065F00079A6D4 /* PullStatusTests */,
 				24232A4F172065F00079A6D4 /* Frameworks */,
 				24232A4E172065F00079A6D4 /* Products */,
+				AA6874E509464302A80B6890 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,10 +138,12 @@
 		24232A4F172065F00079A6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24232A8B17207C7D0079A6D4 /* QuartzCore.framework */,
 				24232A50172065F00079A6D4 /* UIKit.framework */,
 				24232A52172065F00079A6D4 /* Foundation.framework */,
 				24232A54172065F00079A6D4 /* CoreGraphics.framework */,
 				24232A74172065F00079A6D4 /* SenTestingKit.framework */,
+				343C680603D34D15944B5E7A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +151,7 @@
 		24232A56172065F00079A6D4 /* PullStatus */ = {
 			isa = PBXGroup;
 			children = (
+				24232A8D17207E640079A6D4 /* Settings */,
 				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
 				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
 				24232A68172065F00079A6D4 /* TNWViewController.h */,
@@ -181,6 +197,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		24232A8D17207E640079A6D4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				24232A9117207FB10079A6D4 /* SettingsView.xib */,
+				24232A931720803F0079A6D4 /* TNWSettingsViewController.h */,
+				24232A941720803F0079A6D4 /* TNWSettingsViewController.m */,
+			);
+			name = Settings;
+			path = /Users/brendanjerwin/Projects/PullStatus/PullStatus/Settings;
+			sourceTree = "<absolute>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24232A85172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatus" */;
 			buildPhases = (
+				F09A593F6294454C925CD990 /* Check Pods Manifest.lock */,
 				24232A49172065F00079A6D4 /* Sources */,
 				24232A4A172065F00079A6D4 /* Frameworks */,
 				24232A4B172065F00079A6D4 /* Resources */,
+				957C64F2C50946CCA4A7C449 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +294,7 @@
 				4B40A2BC172069F100C26D58 /* icon-57@2x.png in Resources */,
 				4BA6DD1717207E100070533F /* gear.png in Resources */,
 				4BA6DD1817207E100070533F /* gear@2x.png in Resources */,
+				24232A9217207FB10079A6D4 /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +322,34 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		957C64F2C50946CCA4A7C449 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		F09A593F6294454C925CD990 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,6 +360,7 @@
 				24232A5D172065F00079A6D4 /* main.m in Sources */,
 				24232A61172065F00079A6D4 /* TNWAppDelegate.m in Sources */,
 				24232A6A172065F00079A6D4 /* TNWViewController.m in Sources */,
+				24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +468,7 @@
 		};
 		24232A86172065F00079A6D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA6874E509464302A80B6890 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
@@ -421,6 +481,7 @@
 		};
 		24232A87172065F00079A6D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA6874E509464302A80B6890 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
