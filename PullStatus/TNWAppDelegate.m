@@ -16,14 +16,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+    
     UIViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
     UIViewController *mainView = [[TNWViewController alloc] initWithNibName:@"TNWViewController" bundle:nil];
-
+    
     NVSlideMenuController *slideMenuController = [[NVSlideMenuController alloc]
                                                   initWithMenuViewController:settingsView
-                                                    andContentViewController:mainView];
-
+                                                  andContentViewController:mainView];
+    
     self.window.rootViewController = slideMenuController;
     [self.window makeKeyAndVisible];
     return YES;
