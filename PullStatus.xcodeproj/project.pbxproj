@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24232A51172065F00079A6D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A50172065F00079A6D4 /* UIKit.framework */; };
+		24232A53172065F00079A6D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A52172065F00079A6D4 /* Foundation.framework */; };
+		24232A55172065F00079A6D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A54172065F00079A6D4 /* CoreGraphics.framework */; };
+		24232A5B172065F00079A6D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24232A59172065F00079A6D4 /* InfoPlist.strings */; };
+		24232A5D172065F00079A6D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A5C172065F00079A6D4 /* main.m */; };
+		24232A61172065F00079A6D4 /* TNWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A60172065F00079A6D4 /* TNWAppDelegate.m */; };
+		24232A63172065F00079A6D4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 24232A62172065F00079A6D4 /* Default.png */; };
+		24232A65172065F00079A6D4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24232A64172065F00079A6D4 /* Default@2x.png */; };
+		24232A67172065F00079A6D4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24232A66172065F00079A6D4 /* Default-568h@2x.png */; };
+		24232A6A172065F00079A6D4 /* TNWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A69172065F00079A6D4 /* TNWViewController.m */; };
+		24232A6D172065F00079A6D4 /* TNWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24232A6B172065F00079A6D4 /* TNWViewController.xib */; };
+		24232A75172065F00079A6D4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A74172065F00079A6D4 /* SenTestingKit.framework */; };
+		24232A76172065F00079A6D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A50172065F00079A6D4 /* UIKit.framework */; };
+		24232A77172065F00079A6D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A52172065F00079A6D4 /* Foundation.framework */; };
+		24232A7F172065F00079A6D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24232A7D172065F00079A6D4 /* InfoPlist.strings */; };
+		24232A82172065F00079A6D4 /* PullStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A81172065F00079A6D4 /* PullStatusTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24232A78172065F00079A6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24232A45172065F00079A6D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24232A4C172065F00079A6D4;
+			remoteInfo = PullStatus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24232A4D172065F00079A6D4 /* PullStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PullStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24232A50172065F00079A6D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24232A52172065F00079A6D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		24232A54172065F00079A6D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		24232A58172065F00079A6D4 /* PullStatus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullStatus-Info.plist"; sourceTree = "<group>"; };
+		24232A5A172065F00079A6D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24232A5C172065F00079A6D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24232A5E172065F00079A6D4 /* PullStatus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PullStatus-Prefix.pch"; sourceTree = "<group>"; };
+		24232A5F172065F00079A6D4 /* TNWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNWAppDelegate.h; sourceTree = "<group>"; };
+		24232A60172065F00079A6D4 /* TNWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNWAppDelegate.m; sourceTree = "<group>"; };
+		24232A62172065F00079A6D4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		24232A64172065F00079A6D4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		24232A66172065F00079A6D4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		24232A68172065F00079A6D4 /* TNWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNWViewController.h; sourceTree = "<group>"; };
+		24232A69172065F00079A6D4 /* TNWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNWViewController.m; sourceTree = "<group>"; };
+		24232A6C172065F00079A6D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TNWViewController.xib; sourceTree = "<group>"; };
+		24232A73172065F00079A6D4 /* PullStatusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullStatusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24232A74172065F00079A6D4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		24232A7C172065F00079A6D4 /* PullStatusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullStatusTests-Info.plist"; sourceTree = "<group>"; };
+		24232A7E172065F00079A6D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24232A80172065F00079A6D4 /* PullStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullStatusTests.h; sourceTree = "<group>"; };
+		24232A81172065F00079A6D4 /* PullStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullStatusTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24232A4A172065F00079A6D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A51172065F00079A6D4 /* UIKit.framework in Frameworks */,
+				24232A53172065F00079A6D4 /* Foundation.framework in Frameworks */,
+				24232A55172065F00079A6D4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24232A6F172065F00079A6D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A75172065F00079A6D4 /* SenTestingKit.framework in Frameworks */,
+				24232A76172065F00079A6D4 /* UIKit.framework in Frameworks */,
+				24232A77172065F00079A6D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24232A44172065F00079A6D4 = {
+			isa = PBXGroup;
+			children = (
+				24232A56172065F00079A6D4 /* PullStatus */,
+				24232A7A172065F00079A6D4 /* PullStatusTests */,
+				24232A4F172065F00079A6D4 /* Frameworks */,
+				24232A4E172065F00079A6D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24232A4E172065F00079A6D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24232A4D172065F00079A6D4 /* PullStatus.app */,
+				24232A73172065F00079A6D4 /* PullStatusTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24232A4F172065F00079A6D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24232A50172065F00079A6D4 /* UIKit.framework */,
+				24232A52172065F00079A6D4 /* Foundation.framework */,
+				24232A54172065F00079A6D4 /* CoreGraphics.framework */,
+				24232A74172065F00079A6D4 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24232A56172065F00079A6D4 /* PullStatus */ = {
+			isa = PBXGroup;
+			children = (
+				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
+				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
+				24232A68172065F00079A6D4 /* TNWViewController.h */,
+				24232A69172065F00079A6D4 /* TNWViewController.m */,
+				24232A6B172065F00079A6D4 /* TNWViewController.xib */,
+				24232A57172065F00079A6D4 /* Supporting Files */,
+			);
+			path = PullStatus;
+			sourceTree = "<group>";
+		};
+		24232A57172065F00079A6D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24232A58172065F00079A6D4 /* PullStatus-Info.plist */,
+				24232A59172065F00079A6D4 /* InfoPlist.strings */,
+				24232A5C172065F00079A6D4 /* main.m */,
+				24232A5E172065F00079A6D4 /* PullStatus-Prefix.pch */,
+				24232A62172065F00079A6D4 /* Default.png */,
+				24232A64172065F00079A6D4 /* Default@2x.png */,
+				24232A66172065F00079A6D4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24232A7A172065F00079A6D4 /* PullStatusTests */ = {
+			isa = PBXGroup;
+			children = (
+				24232A80172065F00079A6D4 /* PullStatusTests.h */,
+				24232A81172065F00079A6D4 /* PullStatusTests.m */,
+				24232A7B172065F00079A6D4 /* Supporting Files */,
+			);
+			path = PullStatusTests;
+			sourceTree = "<group>";
+		};
+		24232A7B172065F00079A6D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24232A7C172065F00079A6D4 /* PullStatusTests-Info.plist */,
+				24232A7D172065F00079A6D4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24232A4C172065F00079A6D4 /* PullStatus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24232A85172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatus" */;
+			buildPhases = (
+				24232A49172065F00079A6D4 /* Sources */,
+				24232A4A172065F00079A6D4 /* Frameworks */,
+				24232A4B172065F00079A6D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PullStatus;
+			productName = PullStatus;
+			productReference = 24232A4D172065F00079A6D4 /* PullStatus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24232A72172065F00079A6D4 /* PullStatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24232A88172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatusTests" */;
+			buildPhases = (
+				24232A6E172065F00079A6D4 /* Sources */,
+				24232A6F172065F00079A6D4 /* Frameworks */,
+				24232A70172065F00079A6D4 /* Resources */,
+				24232A71172065F00079A6D4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24232A79172065F00079A6D4 /* PBXTargetDependency */,
+			);
+			name = PullStatusTests;
+			productName = PullStatusTests;
+			productReference = 24232A73172065F00079A6D4 /* PullStatusTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24232A45172065F00079A6D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TNW;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "The Network";
+			};
+			buildConfigurationList = 24232A48172065F00079A6D4 /* Build configuration list for PBXProject "PullStatus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 24232A44172065F00079A6D4;
+			productRefGroup = 24232A4E172065F00079A6D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24232A4C172065F00079A6D4 /* PullStatus */,
+				24232A72172065F00079A6D4 /* PullStatusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24232A4B172065F00079A6D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A5B172065F00079A6D4 /* InfoPlist.strings in Resources */,
+				24232A63172065F00079A6D4 /* Default.png in Resources */,
+				24232A65172065F00079A6D4 /* Default@2x.png in Resources */,
+				24232A67172065F00079A6D4 /* Default-568h@2x.png in Resources */,
+				24232A6D172065F00079A6D4 /* TNWViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24232A70172065F00079A6D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A7F172065F00079A6D4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24232A71172065F00079A6D4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24232A49172065F00079A6D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A5D172065F00079A6D4 /* main.m in Sources */,
+				24232A61172065F00079A6D4 /* TNWAppDelegate.m in Sources */,
+				24232A6A172065F00079A6D4 /* TNWViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24232A6E172065F00079A6D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24232A82172065F00079A6D4 /* PullStatusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24232A79172065F00079A6D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24232A4C172065F00079A6D4 /* PullStatus */;
+			targetProxy = 24232A78172065F00079A6D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24232A59172065F00079A6D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24232A5A172065F00079A6D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		24232A6B172065F00079A6D4 /* TNWViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24232A6C172065F00079A6D4 /* en */,
+			);
+			name = TNWViewController.xib;
+			sourceTree = "<group>";
+		};
+		24232A7D172065F00079A6D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24232A7E172065F00079A6D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24232A83172065F00079A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		24232A84172065F00079A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24232A86172065F00079A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
+				INFOPLIST_FILE = "PullStatus/PullStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		24232A87172065F00079A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
+				INFOPLIST_FILE = "PullStatus/PullStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		24232A89172065F00079A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PullStatus.app/PullStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
+				INFOPLIST_FILE = "PullStatusTests/PullStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		24232A8A172065F00079A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PullStatus.app/PullStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullStatus/PullStatus-Prefix.pch";
+				INFOPLIST_FILE = "PullStatusTests/PullStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24232A48172065F00079A6D4 /* Build configuration list for PBXProject "PullStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24232A83172065F00079A6D4 /* Debug */,
+				24232A84172065F00079A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24232A85172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24232A86172065F00079A6D4 /* Debug */,
+				24232A87172065F00079A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		24232A88172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24232A89172065F00079A6D4 /* Debug */,
+				24232A8A172065F00079A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24232A45172065F00079A6D4 /* Project object */;
+}
