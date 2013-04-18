@@ -23,6 +23,11 @@
 		24232A77172065F00079A6D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A52172065F00079A6D4 /* Foundation.framework */; };
 		24232A7F172065F00079A6D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24232A7D172065F00079A6D4 /* InfoPlist.strings */; };
 		24232A82172065F00079A6D4 /* PullStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A81172065F00079A6D4 /* PullStatusTests.m */; };
+		4B40A2B4172068FA00C26D58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B3172068FA00C26D58 /* Default.png */; };
+		4B40A2B6172068FE00C26D58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B5172068FE00C26D58 /* Default@2x.png */; };
+		4B40A2B81720690100C26D58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B71720690100C26D58 /* Default-568h@2x.png */; };
+		4B40A2BA172069EE00C26D58 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B9172069EE00C26D58 /* icon-57.png */; };
+		4B40A2BC172069F100C26D58 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2BB172069F100C26D58 /* icon-57@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		24232A7E172065F00079A6D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24232A80172065F00079A6D4 /* PullStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullStatusTests.h; sourceTree = "<group>"; };
 		24232A81172065F00079A6D4 /* PullStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullStatusTests.m; sourceTree = "<group>"; };
+		4B40A2B3172068FA00C26D58 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4B40A2B5172068FE00C26D58 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4B40A2B71720690100C26D58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4B40A2B9172069EE00C26D58 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
+		4B40A2BB172069F100C26D58 /* icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,11 @@
 		24232A44172065F00079A6D4 = {
 			isa = PBXGroup;
 			children = (
+				4B40A2BB172069F100C26D58 /* icon-57@2x.png */,
+				4B40A2B9172069EE00C26D58 /* icon-57.png */,
+				4B40A2B71720690100C26D58 /* Default-568h@2x.png */,
+				4B40A2B5172068FE00C26D58 /* Default@2x.png */,
+				4B40A2B3172068FA00C26D58 /* Default.png */,
 				24232A56172065F00079A6D4 /* PullStatus */,
 				24232A7A172065F00079A6D4 /* PullStatusTests */,
 				24232A4F172065F00079A6D4 /* Frameworks */,
@@ -237,6 +252,11 @@
 				24232A65172065F00079A6D4 /* Default@2x.png in Resources */,
 				24232A67172065F00079A6D4 /* Default-568h@2x.png in Resources */,
 				24232A6D172065F00079A6D4 /* TNWViewController.xib in Resources */,
+				4B40A2B4172068FA00C26D58 /* Default.png in Resources */,
+				4B40A2B6172068FE00C26D58 /* Default@2x.png in Resources */,
+				4B40A2B81720690100C26D58 /* Default-568h@2x.png in Resources */,
+				4B40A2BA172069EE00C26D58 /* icon-57.png in Resources */,
+				4B40A2BC172069F100C26D58 /* icon-57@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +476,7 @@
 				24232A87172065F00079A6D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24232A88172065F00079A6D4 /* Build configuration list for PBXNativeTarget "PullStatusTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +485,7 @@
 				24232A8A172065F00079A6D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
