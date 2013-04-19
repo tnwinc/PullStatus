@@ -26,6 +26,8 @@
 		24232A8C17207C7D0079A6D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A8B17207C7D0079A6D4 /* QuartzCore.framework */; };
 		24232A9217207FB10079A6D4 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24232A9117207FB10079A6D4 /* SettingsView.xib */; };
 		24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A941720803F0079A6D4 /* TNWSettingsViewController.m */; };
+		24FD30E6172183040062F242 /* TNWPullrequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */; };
+		24FD30E91721960C0062F242 /* TNWRepositoryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */; };
 		4B27CE6717218E5600F66E20 /* barButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE5B17218E5600F66E20 /* barButton.png */; };
 		4B27CE6817218E5600F66E20 /* barButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE5C17218E5600F66E20 /* barButton@2x.png */; };
 		4B27CE6917218E5600F66E20 /* barButtonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE5D17218E5600F66E20 /* barButtonBack.png */; };
@@ -38,7 +40,6 @@
 		4B27CE7017218E5600F66E20 /* barButtonDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6417218E5600F66E20 /* barButtonDisabled@2x.png */; };
 		4B27CE7117218E5600F66E20 /* barButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6517218E5600F66E20 /* barButtonPressed.png */; };
 		4B27CE7217218E5600F66E20 /* barButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6617218E5600F66E20 /* barButtonPressed@2x.png */; };
-		24FD30E6172183040062F242 /* TNWPullrequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */; };
 		4B40A2B4172068FA00C26D58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B3172068FA00C26D58 /* Default.png */; };
 		4B40A2B6172068FE00C26D58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B5172068FE00C26D58 /* Default@2x.png */; };
 		4B40A2B81720690100C26D58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B71720690100C26D58 /* Default-568h@2x.png */; };
@@ -90,6 +91,8 @@
 		24232A941720803F0079A6D4 /* TNWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWSettingsViewController.m; sourceTree = "<group>"; };
 		24FD30E4172183030062F242 /* TNWPullrequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWPullrequestTableViewController.h; sourceTree = "<group>"; };
 		24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWPullrequestTableViewController.m; sourceTree = "<group>"; };
+		24FD30E71721960C0062F242 /* TNWRepositoryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWRepositoryListTableViewController.h; sourceTree = "<group>"; };
+		24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWRepositoryListTableViewController.m; sourceTree = "<group>"; };
 		343C680603D34D15944B5E7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B27CE5B17218E5600F66E20 /* barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButton.png; sourceTree = "<group>"; };
 		4B27CE5C17218E5600F66E20 /* barButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barButton@2x.png"; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				24232A9117207FB10079A6D4 /* SettingsView.xib */,
 				24232A931720803F0079A6D4 /* TNWSettingsViewController.h */,
 				24232A941720803F0079A6D4 /* TNWSettingsViewController.m */,
+				24FD30E71721960C0062F242 /* TNWRepositoryListTableViewController.h */,
+				24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */,
 			);
 			name = Settings;
 			path = PullStatus/Settings;
@@ -431,6 +436,7 @@
 				24232A6A172065F00079A6D4 /* TNWViewController.m in Sources */,
 				24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */,
 				24FD30E6172183040062F242 /* TNWPullrequestTableViewController.m in Sources */,
+				24FD30E91721960C0062F242 /* TNWRepositoryListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
