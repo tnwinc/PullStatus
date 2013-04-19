@@ -29,7 +29,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)settingsDidPress:(id)sender {
+- (IBAction)settingsWasPressed:(id)sender {
     NSLog(@"Settings was pressed");
     if (isMenuOpen) [self.slideMenuController closeMenuAnimated:YES completion:nil];
     else [self.slideMenuController openMenuAnimated:YES completion:nil];
