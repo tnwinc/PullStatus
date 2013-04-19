@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) TNWViewController *viewController;
 
+-(void)setAppearance;
+
 @end
