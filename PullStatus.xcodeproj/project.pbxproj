@@ -38,6 +38,7 @@
 		4B27CE7017218E5600F66E20 /* barButtonDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6417218E5600F66E20 /* barButtonDisabled@2x.png */; };
 		4B27CE7117218E5600F66E20 /* barButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6517218E5600F66E20 /* barButtonPressed.png */; };
 		4B27CE7217218E5600F66E20 /* barButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6617218E5600F66E20 /* barButtonPressed@2x.png */; };
+		24FD30E6172183040062F242 /* TNWPullrequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */; };
 		4B40A2B4172068FA00C26D58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B3172068FA00C26D58 /* Default.png */; };
 		4B40A2B6172068FE00C26D58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B5172068FE00C26D58 /* Default@2x.png */; };
 		4B40A2B81720690100C26D58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B40A2B71720690100C26D58 /* Default-568h@2x.png */; };
@@ -87,6 +88,8 @@
 		24232A9117207FB10079A6D4 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		24232A931720803F0079A6D4 /* TNWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWSettingsViewController.h; sourceTree = "<group>"; };
 		24232A941720803F0079A6D4 /* TNWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWSettingsViewController.m; sourceTree = "<group>"; };
+		24FD30E4172183030062F242 /* TNWPullrequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWPullrequestTableViewController.h; sourceTree = "<group>"; };
+		24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWPullrequestTableViewController.m; sourceTree = "<group>"; };
 		343C680603D34D15944B5E7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B27CE5B17218E5600F66E20 /* barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButton.png; sourceTree = "<group>"; };
 		4B27CE5C17218E5600F66E20 /* barButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barButton@2x.png"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				24232A68172065F00079A6D4 /* TNWViewController.h */,
 				24232A69172065F00079A6D4 /* TNWViewController.m */,
 				24232A6B172065F00079A6D4 /* TNWViewController.xib */,
+				24FD30E4172183030062F242 /* TNWPullrequestTableViewController.h */,
+				24FD30E5172183030062F242 /* TNWPullrequestTableViewController.m */,
 				24232A57172065F00079A6D4 /* Supporting Files */,
 			);
 			path = PullStatus;
@@ -425,6 +430,7 @@
 				24232A61172065F00079A6D4 /* TNWAppDelegate.m in Sources */,
 				24232A6A172065F00079A6D4 /* TNWViewController.m in Sources */,
 				24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */,
+				24FD30E6172183040062F242 /* TNWPullrequestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

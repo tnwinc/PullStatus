@@ -10,5 +10,6 @@
 
 @interface TNWViewController : UIViewController
 
-- (IBAction)settingsDidPress:(id)sender;
+- (IBAction)settingsWasPressed:(id)sender;
+
 @end
