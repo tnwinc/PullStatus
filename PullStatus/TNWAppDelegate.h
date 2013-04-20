@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class TNWViewController;
-
 @interface TNWAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) TNWViewController *viewController;
 
 -(void)setAppearance;
 

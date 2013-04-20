@@ -8,27 +8,36 @@
 
 #import "TNWAppDelegate.h"
 
-#import "TNWViewController.h"
 #import "TNWSettingsViewController.h"
-#import "NVSlideMenuController.h"
+#import "PKRevealController.h"
 
 @implementation TNWAppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
     [self setAppearance];
-    
-    UIViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
-    UIViewController *mainView = [[TNWViewController alloc] initWithNibName:@"TNWViewController" bundle:nil];
-    
-    NVSlideMenuController *slideMenuController = [[NVSlideMenuController alloc]
-                                                  initWithMenuViewController:settingsView
-                                                  andContentViewController:mainView];
-    
-    self.window.rootViewController = slideMenuController;
+
+    [self loadRootViewController];
+
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadRootViewController {
+    UIViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+    UIViewController *mainView = [[self storyboard] instantiateInitialViewController];
+
+
+    PKRevealController *slideMenuController = [PKRevealController revealControllerWithFrontViewController:mainView
+                                                                                       leftViewController:settingsView
+                                                                                                  options:nil];
+    self.window.rootViewController = slideMenuController;
+}
+
+- (UIStoryboard *)storyboard {
+    return [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -63,9 +72,9 @@
     UIImage *barButtonPressed = [[UIImage imageNamed:@"barButtonPressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 5)];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setBackgroundImage:barButtonPressed
-     forState:UIControlStateHighlighted
-     barMetrics:UIBarMetricsDefault];
-    
+               forState:UIControlStateHighlighted
+             barMetrics:UIBarMetricsDefault];
+
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
 }
 

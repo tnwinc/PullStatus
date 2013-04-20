@@ -1,38 +1,24 @@
 //
-//  TNWPullrequestTableViewController.m
+//  TNWViewController.m
 //  PullStatus
 //
-//  Created by Brendan Erwin on 4/19/13.
+//  Created by Brendan Erwin on 4/18/13.
 //  Copyright (c) 2013 The Network. All rights reserved.
 //
 
-#import "TNWPullrequestTableViewController.h"
+#import "TNWPullRequestViewController.h"
+#import "PKRevealController.h"
 
-@interface TNWPullrequestTableViewController ()
+@interface TNWPullRequestViewController () {
+}
 
 @end
 
-@implementation TNWPullrequestTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation TNWPullRequestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +26,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)settingsWasPressed:(id)sender {
+    NSLog(@"settingsWasPressed");
+    
+    UIViewController *settings = self.parentViewController.revealController.leftViewController;
+    [self.parentViewController.revealController showViewController:settings];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cellForRow");
     static NSString *cellIdentifier = @"PRCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 

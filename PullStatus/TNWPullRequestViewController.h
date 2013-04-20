@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TNWViewController : UIViewController
+@interface TNWPullRequestViewController : UITableViewController
 
 - (IBAction)settingsWasPressed:(id)sender;
 
