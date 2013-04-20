@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TNWPullrequestTableViewController : UITableViewController
+@interface TNWPullrequestTableViewController : UITableViewController 
 
 @end
