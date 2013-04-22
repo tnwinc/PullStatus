@@ -8,6 +8,7 @@
 
 
 #import "Kiwi.h"
+#import "OCMock.h"
 
 SPEC_BEGIN(MathSpec)
 
