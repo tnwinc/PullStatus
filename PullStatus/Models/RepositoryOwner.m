@@ -37,9 +37,10 @@
     } else if ([key isEqualToString:@"id"]) {
         [self setValue:value forKey:@"RepositoryOwnerId"];
     } else {
-        [super setValue:value forUndefinedKey:key];
+        if ([super respondsToSelector:@selector(key)]) {
+            [super setValue:value forUndefinedKey:key];
+        }
     }
-
 }
 
 

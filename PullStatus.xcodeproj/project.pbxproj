@@ -27,15 +27,13 @@
 		24232A9217207FB10079A6D4 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24232A9117207FB10079A6D4 /* SettingsView.xib */; };
 		24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A941720803F0079A6D4 /* TNWSettingsViewController.m */; };
 		24608C8B17258634006ACA7D /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24608C8A17258634006ACA7D /* RepositoryModel.m */; };
-		247712FA1726C19200E88B30 /* Rfc3339DateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 247712F91726C19200E88B30 /* Rfc3339DateConverter.m */; };
-		247712FB1726C19200E88B30 /* Rfc3339DateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 247712F91726C19200E88B30 /* Rfc3339DateConverter.m */; };
-		247712FD1726C2B700E88B30 /* Rfc3339DateConverterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 247712FC1726C2B700E88B30 /* Rfc3339DateConverterSpec.m */; };
+		24869ACB17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
+		24869ACC17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
+		24869ACE17272B0300094B01 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24869ACD17272B0300094B01 /* MobileCoreServices.framework */; };
+		24869AD017272B0B00094B01 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24869ACF17272B0B00094B01 /* SystemConfiguration.framework */; };
 		24CA8ADE1725A9AC00B5B4E3 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 24CA8ADD1725A9AC00B5B4E3 /* Repository.json */; };
 		24CA8AEE1725B83700B5B4E3 /* RepositoryOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */; };
 		24CA8AEF1725B83700B5B4E3 /* RepositoryOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */; };
-		24CA8AF01725B83700B5B4E3 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AED1725B83700B5B4E3 /* Repository.m */; };
-		24CA8AF11725B83700B5B4E3 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AED1725B83700B5B4E3 /* Repository.m */; };
-		24FD30E91721960C0062F242 /* TNWRepositoryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */; };
 		24FD30ED17222D110062F242 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FD30EC17222D110062F242 /* Storyboard.storyboard */; };
 		4B27CE6717218E5600F66E20 /* barButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE5B17218E5600F66E20 /* barButton.png */; };
 		4B27CE6817218E5600F66E20 /* barButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE5C17218E5600F66E20 /* barButton@2x.png */; };
@@ -97,16 +95,13 @@
 		24232A931720803F0079A6D4 /* TNWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWSettingsViewController.h; sourceTree = "<group>"; };
 		24232A941720803F0079A6D4 /* TNWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWSettingsViewController.m; sourceTree = "<group>"; };
 		24608C8A17258634006ACA7D /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
-		247712F81726C19200E88B30 /* Rfc3339DateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rfc3339DateConverter.h; sourceTree = "<group>"; };
-		247712F91726C19200E88B30 /* Rfc3339DateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rfc3339DateConverter.m; sourceTree = "<group>"; };
-		247712FC1726C2B700E88B30 /* Rfc3339DateConverterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rfc3339DateConverterSpec.m; sourceTree = "<group>"; };
+		24869AC917271CDA00094B01 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		24869ACA17271CDA00094B01 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		24869ACD17272B0300094B01 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		24869ACF17272B0B00094B01 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		24CA8ADD1725A9AC00B5B4E3 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
 		24CA8AEA1725B83700B5B4E3 /* RepositoryOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryOwner.h; sourceTree = "<group>"; };
 		24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryOwner.m; sourceTree = "<group>"; };
-		24CA8AEC1725B83700B5B4E3 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
-		24CA8AED1725B83700B5B4E3 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
-		24FD30E71721960C0062F242 /* TNWRepositoryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWRepositoryListTableViewController.h; sourceTree = "<group>"; };
-		24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWRepositoryListTableViewController.m; sourceTree = "<group>"; };
 		24FD30EC17222D110062F242 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		343C680603D34D15944B5E7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B27CE5B17218E5600F66E20 /* barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButton.png; sourceTree = "<group>"; };
@@ -140,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24869AD017272B0B00094B01 /* SystemConfiguration.framework in Frameworks */,
+				24869ACE17272B0300094B01 /* MobileCoreServices.framework in Frameworks */,
 				24232A8C17207C7D0079A6D4 /* QuartzCore.framework in Frameworks */,
 				24232A51172065F00079A6D4 /* UIKit.framework in Frameworks */,
 				24232A53172065F00079A6D4 /* Foundation.framework in Frameworks */,
@@ -191,6 +188,8 @@
 		24232A4F172065F00079A6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24869ACF17272B0B00094B01 /* SystemConfiguration.framework */,
+				24869ACD17272B0300094B01 /* MobileCoreServices.framework */,
 				24232A8B17207C7D0079A6D4 /* QuartzCore.framework */,
 				24232A50172065F00079A6D4 /* UIKit.framework */,
 				24232A52172065F00079A6D4 /* Foundation.framework */,
@@ -207,8 +206,8 @@
 			children = (
 				24608C801725838F006ACA7D /* Models */,
 				24232A8D17207E640079A6D4 /* Settings */,
-				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
 				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
+				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
 				24232A68172065F00079A6D4 /* TNWPullRequestViewController.h */,
 				24232A69172065F00079A6D4 /* TNWPullRequestViewController.m */,
 				24FD30EC17222D110062F242 /* Storyboard.storyboard */,
@@ -257,8 +256,6 @@
 				24232A9117207FB10079A6D4 /* SettingsView.xib */,
 				24232A931720803F0079A6D4 /* TNWSettingsViewController.h */,
 				24232A941720803F0079A6D4 /* TNWSettingsViewController.m */,
-				24FD30E71721960C0062F242 /* TNWRepositoryListTableViewController.h */,
-				24FD30E81721960C0062F242 /* TNWRepositoryListTableViewController.m */,
 			);
 			name = Settings;
 			path = PullStatus/Settings;
@@ -267,12 +264,10 @@
 		24608C801725838F006ACA7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				24869AC917271CDA00094B01 /* Repository.h */,
+				24869ACA17271CDA00094B01 /* Repository.m */,
 				24CA8AEA1725B83700B5B4E3 /* RepositoryOwner.h */,
 				24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */,
-				24CA8AEC1725B83700B5B4E3 /* Repository.h */,
-				24CA8AED1725B83700B5B4E3 /* Repository.m */,
-				247712F81726C19200E88B30 /* Rfc3339DateConverter.h */,
-				247712F91726C19200E88B30 /* Rfc3339DateConverter.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,7 +277,6 @@
 			children = (
 				24608C8A17258634006ACA7D /* RepositoryModel.m */,
 				24CA8ADD1725A9AC00B5B4E3 /* Repository.json */,
-				247712FC1726C2B700E88B30 /* Rfc3339DateConverterSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -508,10 +502,8 @@
 				24232A61172065F00079A6D4 /* TNWAppDelegate.m in Sources */,
 				24232A6A172065F00079A6D4 /* TNWPullRequestViewController.m in Sources */,
 				24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */,
-				24FD30E91721960C0062F242 /* TNWRepositoryListTableViewController.m in Sources */,
 				24CA8AEE1725B83700B5B4E3 /* RepositoryOwner.m in Sources */,
-				24CA8AF01725B83700B5B4E3 /* Repository.m in Sources */,
-				247712FA1726C19200E88B30 /* Rfc3339DateConverter.m in Sources */,
+				24869ACB17271CDA00094B01 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +514,7 @@
 				24232A82172065F00079A6D4 /* KiwiSpec.m in Sources */,
 				24608C8B17258634006ACA7D /* RepositoryModel.m in Sources */,
 				24CA8AEF1725B83700B5B4E3 /* RepositoryOwner.m in Sources */,
-				24CA8AF11725B83700B5B4E3 /* Repository.m in Sources */,
-				247712FB1726C19200E88B30 /* Rfc3339DateConverter.m in Sources */,
-				247712FD1726C2B700E88B30 /* Rfc3339DateConverterSpec.m in Sources */,
+				24869ACC17271CDA00094B01 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

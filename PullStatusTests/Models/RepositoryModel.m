@@ -42,7 +42,7 @@ describe(@"Repository Model", ^{
             [[cut.sshUrl should] equal:[NSURL URLWithString:@"git@github.com:octocat/Hello-World.git"]];
             [[cut.mirrorUrl should] equal:[NSURL URLWithString:@"git://git.example.com/octocat/Hello-World"]];
             [[cut.homepage should] equal:[NSURL URLWithString:@"https://github.com"]];
-//            [[cut.createdAt should] equal:@"2011-01-26T19:01:12Z"];
+            [[cut.createdAt should] equal:[[Repository dateFormatter] dateFromString:@"2011-01-26T19:01:12Z"]];
         });
 
         it(@"should really return URLs", ^{

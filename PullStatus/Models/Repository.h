@@ -2,12 +2,11 @@
 //  Repository.h
 //  
 //
-//  Created by Brendan Erwin on 4/22/13.
+//  Created by Brendan Erwin on 4/23/13.
 //  Copyright (c) 2013. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "DCKeyValueObjectMapping.h"
 
 @class RepositoryOwner;
 
@@ -31,7 +30,8 @@
 @property (nonatomic, copy) NSDate *updatedAt;
 @property (nonatomic, copy) NSURL *url;
 
-
++ (NSDateFormatter *)dateFormatter;
 + (Repository *)instanceFromDictionary:(NSDictionary *)aDictionary;
-+ (DCKeyValueObjectMapping *)mapper;
+- (void)setAttributesFromDictionary:(NSDictionary *)aDictionary;
+
 @end

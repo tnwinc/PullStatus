@@ -5,7 +5,8 @@
         "id": 1,
         "avatar_url": "https://github.com/images/error/octocat_happy.gif",
         "gravatar_id": "somehexcode",
-        "url": "https://api.github.com/users/octocat"
+        "url": "https://api.github.com/users/octocat",
+        "junk": "junk"
     },
     "name": "Hello-World",
     "full_name": "octocat/Hello-World",
@@ -30,5 +31,7 @@
     "open_issues": 0,
     "pushed_at": "2011-01-26T19:06:43Z",
     "created_at": "2011-01-26T19:01:12Z",
-    "updated_at": "2011-01-26T19:14:43Z"
+    "updated_at": "2011-01-26T19:14:43Z",
+    "following_url": "https://junk.com",
+    "junk": "junk"
 }

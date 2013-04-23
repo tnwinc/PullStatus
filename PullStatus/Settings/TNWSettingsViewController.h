@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TNWSettingsViewController : UIViewController
+@interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property NSMutableArray *repositories;
 
 @end

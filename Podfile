@@ -1,7 +1,7 @@
 platform :ios, '6.0'
 
 pod 'PKRevealController'
-pod 'DCKeyValueObjectMapping'
+pod 'AFNetworking'
 
 target :PullStatusTests, :exclusive => true do
     pod 'Kiwi'
