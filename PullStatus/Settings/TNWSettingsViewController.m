@@ -16,7 +16,7 @@
 
 @implementation TNWSettingsViewController
 
--(void)viewDidLoad{
+- (void)viewDidLoad {
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
                                                       object:nil
                                                        queue:nil

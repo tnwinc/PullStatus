@@ -7,32 +7,18 @@
 //
 
 #import "TNWPullRequestViewController.h"
-#import "SWRevealViewController.h"
-
-@interface TNWPullRequestViewController () {
-}
-
-@end
 
 @implementation TNWPullRequestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    SWRevealViewController *revealController = self.revealViewController;
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    [self.navigationController.view addGestureRecognizer:revealController.panGestureRecognizer];
-
     self.refreshControl = [[UIRefreshControl alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)settingsWasPressed:(id)sender {
-    [self.revealViewController revealToggle:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsRequested"
+                                                        object:nil];
 }
 
 #pragma mark - Table view data source
