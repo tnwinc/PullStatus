@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
 @interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+@property (weak, nonatomic) IBOutlet UIButton *authenticationButton;
+@property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
 @property NSMutableArray *repositories;
 
+-(void) loadRepositories;
 @end

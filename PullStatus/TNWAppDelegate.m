@@ -9,7 +9,7 @@
 #import "TNWAppDelegate.h"
 
 #import "TNWSettingsViewController.h"
-#import "PKRevealController.h"
+#import "SWRevealViewController.h"
 
 @implementation TNWAppDelegate
 
@@ -26,13 +26,14 @@
 }
 
 - (void)loadRootViewController {
-    UIViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+    TNWSettingsViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
     UIViewController *mainView = [[self storyboard] instantiateInitialViewController];
 
+    self.settingsController = settingsView;
 
-    PKRevealController *slideMenuController = [PKRevealController revealControllerWithFrontViewController:mainView
-                                                                                       leftViewController:settingsView
-                                                                                                  options:nil];
+    SWRevealViewController *slideMenuController = [[SWRevealViewController alloc] initWithRearViewController:settingsView
+                                                                                         frontViewController:mainView];
+    slideMenuController.delegate = self;
     self.window.rootViewController = slideMenuController;
 }
 
@@ -76,6 +77,15 @@
              barMetrics:UIBarMetricsDefault];
 
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
+}
+
+
+#pragma mark - SWRevealViewControllerDelegate
+
+- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position {
+    if (position == FrontViewPositionRight) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsShown" object:self.settingsController];
+    }
 }
 
 @end

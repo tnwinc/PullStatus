@@ -1,6 +1,6 @@
 platform :ios, '6.0'
 
-pod 'PKRevealController'
+pod 'SWRevealViewController'
 pod 'AFNetworking'
 
 target :PullStatusTests, :exclusive => true do

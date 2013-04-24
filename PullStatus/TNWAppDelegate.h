@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
-@interface TNWAppDelegate : UIResponder <UIApplicationDelegate>
+#import "TNWSettingsViewController.h"
+
+@interface TNWAppDelegate : UIResponder <UIApplicationDelegate, SWRevealViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property TNWSettingsViewController *settingsController;
 
 -(void)setAppearance;
 

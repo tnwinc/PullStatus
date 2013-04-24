@@ -10,21 +10,26 @@
 #import "AFNetworking.h"
 #import "Repository.h"
 
+@interface TNWSettingsViewController ()
+@property BOOL loadingRepositories;
+@end
+
 @implementation TNWSettingsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self loadRepositories];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidLoad{
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+        [self loadRepositories];
+    }];
 }
 
 #pragma mark - Load Data
 
 - (void)loadRepositories {
+    if (self.loadingRepositories) return;
+    self.loadingRepositories = YES;
     self.repositories = [[NSMutableArray alloc] init];
 
     NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/tnwinc/repos"];
@@ -33,24 +38,31 @@
     operation = [AFJSONRequestOperation
                  JSONRequestOperationWithRequest:request
 
-                 success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                     NSMutableArray *repos = self.repositories;
-                     for (NSDictionary *item in JSON) {
-                         [repos addObject:[Repository instanceFromDictionary:item]];
-                     }
-                 }
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSMutableArray *repos = self.repositories;
+        //TODO: This loop should be out of the controller
+        for (NSDictionary *item in JSON) {
+            [repos addObject:[Repository instanceFromDictionary:item]];
+        }
 
-                 failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                     NSLog(@"Error: loading repositories: %@", error);
-                 }];
+        self.loadingRepositories = NO;
+        [self.activityView stopAnimating];
+        [self.repositoriesTableView reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesLoaded" object:self];
+    }
 
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Error: loading repositories: %@", error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesFailedToLoad" object:error];
+    }];
+
+    [self.activityView startAnimating];
     [operation start];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return self.repositories.count;
 }
 

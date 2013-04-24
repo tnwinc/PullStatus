@@ -7,7 +7,7 @@
 //
 
 #import "TNWPullRequestViewController.h"
-#import "PKRevealController.h"
+#import "SWRevealViewController.h"
 
 @interface TNWPullRequestViewController () {
 }
@@ -18,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    SWRevealViewController *revealController = self.revealViewController;
+    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
+    [self.navigationController.view addGestureRecognizer:revealController.panGestureRecognizer];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
 }
@@ -29,10 +32,7 @@
 }
 
 - (IBAction)settingsWasPressed:(id)sender {
-    NSLog(@"settingsWasPressed");
-    
-    UIViewController *settings = self.parentViewController.revealController.leftViewController;
-    [self.parentViewController.revealController showViewController:settings];
+    [self.revealViewController revealToggle:self];
 }
 
 #pragma mark - Table view data source
