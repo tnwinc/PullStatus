@@ -10,6 +10,7 @@
 
 #import "TNWSettingsViewController.h"
 #import "SWRevealViewController.h"
+#import "TNWAuthenicationViewController.h"
 
 @implementation TNWAppDelegate
 
@@ -19,6 +20,11 @@
 
     [self setAppearance];
     [self loadRootViewController];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(initiateAuthentication)
+                                                 name:@"ReUpAuthentication"
+                                               object:nil];
 
     [self.window makeKeyAndVisible];
 
@@ -44,6 +50,13 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
         [slideMenuController revealToggle:mainView];
+    }];
+}
+
+-(void) initiateAuthentication {
+    TNWAuthenicationViewController *vc = [[TNWAuthenicationViewController alloc]initWithNibName:@"AuthenticateView" bundle:nil];
+    [self.window.rootViewController presentViewController:vc animated:YES completion:^{
+
     }];
 }
 

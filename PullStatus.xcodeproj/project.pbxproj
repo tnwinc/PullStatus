@@ -26,11 +26,21 @@
 		24232A8C17207C7D0079A6D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A8B17207C7D0079A6D4 /* QuartzCore.framework */; };
 		24232A9217207FB10079A6D4 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24232A9117207FB10079A6D4 /* SettingsView.xib */; };
 		24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24232A941720803F0079A6D4 /* TNWSettingsViewController.m */; };
+		24597B57172818C700DC53A7 /* TNWRepoRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 24597B56172818C700DC53A7 /* TNWRepoRetriever.m */; };
+		24597B58172818C700DC53A7 /* TNWRepoRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 24597B56172818C700DC53A7 /* TNWRepoRetriever.m */; };
+		24597B5A1728265B00DC53A7 /* RepoRetrieverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24597B591728265B00DC53A7 /* RepoRetrieverSpec.m */; };
 		24608C8B17258634006ACA7D /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24608C8A17258634006ACA7D /* RepositoryModel.m */; };
 		24869ACB17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
 		24869ACC17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
 		24869ACE17272B0300094B01 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24869ACD17272B0300094B01 /* MobileCoreServices.framework */; };
 		24869AD017272B0B00094B01 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24869ACF17272B0B00094B01 /* SystemConfiguration.framework */; };
+		24943F4517280E4C00451B89 /* Repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 24943F4417280E4C00451B89 /* Repositories.json */; };
+		24AE91B41728312F000C0342 /* AuthenticateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AE91B31728312E000C0342 /* AuthenticateView.xib */; };
+		24AE91B717284362000C0342 /* TNWAuthenicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AE91B617284362000C0342 /* TNWAuthenicationViewController.m */; };
+		24AE91B817284362000C0342 /* TNWAuthenicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AE91B617284362000C0342 /* TNWAuthenicationViewController.m */; };
+		24AE91BB17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AE91BA17286869000C0342 /* TNWGitHubOathTokenRetriever.m */; };
+		24AE91BC17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AE91BA17286869000C0342 /* TNWGitHubOathTokenRetriever.m */; };
+		24AE91BF172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AE91BE172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m */; };
 		24CA8ADE1725A9AC00B5B4E3 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 24CA8ADD1725A9AC00B5B4E3 /* Repository.json */; };
 		24CA8AEE1725B83700B5B4E3 /* RepositoryOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */; };
 		24CA8AEF1725B83700B5B4E3 /* RepositoryOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */; };
@@ -105,11 +115,21 @@
 		24232A9117207FB10079A6D4 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		24232A931720803F0079A6D4 /* TNWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWSettingsViewController.h; sourceTree = "<group>"; };
 		24232A941720803F0079A6D4 /* TNWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWSettingsViewController.m; sourceTree = "<group>"; };
+		24597B55172818C700DC53A7 /* TNWRepoRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWRepoRetriever.h; sourceTree = "<group>"; };
+		24597B56172818C700DC53A7 /* TNWRepoRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWRepoRetriever.m; sourceTree = "<group>"; };
+		24597B591728265B00DC53A7 /* RepoRetrieverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoRetrieverSpec.m; sourceTree = "<group>"; };
 		24608C8A17258634006ACA7D /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
 		24869AC917271CDA00094B01 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		24869ACA17271CDA00094B01 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		24869ACD17272B0300094B01 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		24869ACF17272B0B00094B01 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		24943F4417280E4C00451B89 /* Repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repositories.json; sourceTree = "<group>"; };
+		24AE91B31728312E000C0342 /* AuthenticateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticateView.xib; sourceTree = "<group>"; };
+		24AE91B517284362000C0342 /* TNWAuthenicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWAuthenicationViewController.h; sourceTree = "<group>"; };
+		24AE91B617284362000C0342 /* TNWAuthenicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWAuthenicationViewController.m; sourceTree = "<group>"; };
+		24AE91B917286869000C0342 /* TNWGitHubOathTokenRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWGitHubOathTokenRetriever.h; sourceTree = "<group>"; };
+		24AE91BA17286869000C0342 /* TNWGitHubOathTokenRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWGitHubOathTokenRetriever.m; sourceTree = "<group>"; };
+		24AE91BE172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubOauthTokenRetrieverSpec.m; sourceTree = "<group>"; };
 		24CA8ADD1725A9AC00B5B4E3 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
 		24CA8AEA1725B83700B5B4E3 /* RepositoryOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryOwner.h; sourceTree = "<group>"; };
 		24CA8AEB1725B83700B5B4E3 /* RepositoryOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryOwner.m; sourceTree = "<group>"; };
@@ -279,6 +299,11 @@
 				24232A9117207FB10079A6D4 /* SettingsView.xib */,
 				24232A931720803F0079A6D4 /* TNWSettingsViewController.h */,
 				24232A941720803F0079A6D4 /* TNWSettingsViewController.m */,
+				24AE91B31728312E000C0342 /* AuthenticateView.xib */,
+				24AE91B517284362000C0342 /* TNWAuthenicationViewController.h */,
+				24AE91B617284362000C0342 /* TNWAuthenicationViewController.m */,
+				24AE91B917286869000C0342 /* TNWGitHubOathTokenRetriever.h */,
+				24AE91BA17286869000C0342 /* TNWGitHubOathTokenRetriever.m */,
 			);
 			name = Settings;
 			path = PullStatus/Settings;
@@ -287,6 +312,8 @@
 		24608C801725838F006ACA7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				24597B55172818C700DC53A7 /* TNWRepoRetriever.h */,
+				24597B56172818C700DC53A7 /* TNWRepoRetriever.m */,
 				24869AC917271CDA00094B01 /* Repository.h */,
 				24869ACA17271CDA00094B01 /* Repository.m */,
 				24CA8AEA1725B83700B5B4E3 /* RepositoryOwner.h */,
@@ -298,10 +325,21 @@
 		24608C8917258600006ACA7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				24AE91BD17286878000C0342 /* Settings */,
+				24943F4417280E4C00451B89 /* Repositories.json */,
 				24608C8A17258634006ACA7D /* RepositoryModel.m */,
 				24CA8ADD1725A9AC00B5B4E3 /* Repository.json */,
+				24597B591728265B00DC53A7 /* RepoRetrieverSpec.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		24AE91BD17286878000C0342 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				24AE91BE172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		4B27CE5A17218E3E00F66E20 /* UI */ = {
@@ -459,6 +497,7 @@
 				4BDBE86C172988C2003BD76E /* repo-cell.png in Resources */,
 				4BDBE86D172988C2003BD76E /* repo-cell@2x.png in Resources */,
 				4BDBE86E172988C2003BD76E /* repo-cell@2x.psd in Resources */,
+				24AE91B41728312F000C0342 /* AuthenticateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +507,7 @@
 			files = (
 				24232A7F172065F00079A6D4 /* InfoPlist.strings in Resources */,
 				24CA8ADE1725A9AC00B5B4E3 /* Repository.json in Resources */,
+				24943F4517280E4C00451B89 /* Repositories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +596,9 @@
 				24232A951720803F0079A6D4 /* TNWSettingsViewController.m in Sources */,
 				24CA8AEE1725B83700B5B4E3 /* RepositoryOwner.m in Sources */,
 				24869ACB17271CDA00094B01 /* Repository.m in Sources */,
+				24597B57172818C700DC53A7 /* TNWRepoRetriever.m in Sources */,
+				24AE91B717284362000C0342 /* TNWAuthenicationViewController.m in Sources */,
+				24AE91BB17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +610,11 @@
 				24608C8B17258634006ACA7D /* RepositoryModel.m in Sources */,
 				24CA8AEF1725B83700B5B4E3 /* RepositoryOwner.m in Sources */,
 				24869ACC17271CDA00094B01 /* Repository.m in Sources */,
+				24597B58172818C700DC53A7 /* TNWRepoRetriever.m in Sources */,
+				24597B5A1728265B00DC53A7 /* RepoRetrieverSpec.m in Sources */,
+				24AE91B817284362000C0342 /* TNWAuthenicationViewController.m in Sources */,
+				24AE91BC17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
+				24AE91BF172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

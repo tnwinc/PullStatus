@@ -35,6 +35,16 @@
     return formatter;
 }
 
++ (NSArray *)arrayOfInstancesFromArrayOfDictionaries:(NSArray *)anArray{
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+
+    for (NSDictionary *item in anArray) {
+        [result addObject:[Repository instanceFromDictionary:item]];
+    }
+
+    return result;
+}
+
 + (Repository *)instanceFromDictionary:(NSDictionary *)aDictionary; {
     Repository *instance = [[Repository alloc] init];
     [instance setAttributesFromDictionary:aDictionary];

@@ -18,6 +18,8 @@
 @implementation TNWSettingsViewController
 
 - (void)viewDidLoad {
+    self.repoRetriever = [[TNWRepoRetriever alloc] init];
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
                                                       object:nil
                                                        queue:nil
@@ -29,8 +31,13 @@
 
 #pragma mark - Load Data
 
+- (IBAction)userPressedAuthenticationButton:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReUpAuthentication" object:nil];
+}
+
 - (void)loadRepositories {
     if (self.loadingRepositories) return;
+
     self.loadingRepositories = YES;
     self.repositories = [[NSMutableArray alloc] init];
     
@@ -59,13 +66,23 @@
                  }];
     
     [self.activityView startAnimating];
-    [operation start];
+
+    assert(self.repoRetriever);
+    [self.repoRetriever loadRepositoriesForUser:@"tnwinc" success:^(NSArray *repositories) {
+        self.loadingRepositories = NO;
+        [self.activityView stopAnimating];
+        [self.repositoriesTableView reloadData];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesLoaded" object:self];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesFailedToLoad" object:error];
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.repositories.count;
+    return self.repoRetriever.repositories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,8 +104,8 @@
         
         cell.textLabel.textColor = [UIColor whiteColor];
     }
-    
-    Repository *repo = [self.repositories objectAtIndex:indexPath.item];
+
+    Repository *repo = [self.repoRetriever.repositories objectAtIndex:indexPath.item];
     assert(repo);
     
     cell.textLabel.text = repo.name;

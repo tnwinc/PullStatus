@@ -48,6 +48,23 @@ describe(@"Repository Model", ^{
         it(@"should really return URLs", ^{
             [[cut.url.class.description should] equal:@"NSURL"];
         });
+
+
+        describe(@"load from array", ^{
+            __block NSArray *cutArray;
+            __block NSArray *sourceArray;
+
+            beforeEach (^{
+                NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Repositories" ofType:@"json"];
+                sourceArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
+                                                              options:NSJSONReadingAllowFragments error:nil];
+                cutArray = [Repository arrayOfInstancesFromArrayOfDictionaries:sourceArray];
+            });
+
+            it(@"should create some repositories", ^{
+                [[cutArray shouldNot] beEmpty];
+            });
+        });
     });
 });
 SPEC_END

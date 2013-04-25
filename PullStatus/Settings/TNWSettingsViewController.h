@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
+#import "TNWRepoRetriever.h"
 
 @interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
-@property (weak, nonatomic) IBOutlet UIButton *authenticationButton;
 @property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
-@property NSMutableArray *repositories;
+
+@property TNWRepoRetriever *repoRetriever;
+
+- (IBAction)userPressedAuthenticationButton:(id)sender;
 
 -(void) loadRepositories;
 @end

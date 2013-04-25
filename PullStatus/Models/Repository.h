@@ -31,6 +31,7 @@
 @property (nonatomic, copy) NSURL *url;
 
 + (NSDateFormatter *)dateFormatter;
++ (NSArray *)arrayOfInstancesFromArrayOfDictionaries:(NSArray *)anArray;
 + (Repository *)instanceFromDictionary:(NSDictionary *)aDictionary;
 - (void)setAttributesFromDictionary:(NSDictionary *)aDictionary;
 
