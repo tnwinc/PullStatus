@@ -25,7 +25,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pull Requests" id="w8M-5c-oSj">
-                        <barButtonItem key="leftBarButtonItem" image="gear.png" id="YHS-v4-0RL">
+                        <barButtonItem key="leftBarButtonItem" image="list-icon.png" id="YHS-v4-0RL">
                             <connections>
                                 <action selector="settingsWasPressed:" destination="RDJ-ND-pPT" id="zee-Eq-5wT"/>
                             </connections>
@@ -57,8 +57,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear.png" width="20" height="20"/>
+        <image name="list-icon.png" width="20" height="20"/>
     </resources>
+    <classes>
+        <class className="TNWPullRequestViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TNWPullRequestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="settingsWasPressed:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
