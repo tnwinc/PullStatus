@@ -206,12 +206,12 @@
 			children = (
 				24608C801725838F006ACA7D /* Models */,
 				24232A8D17207E640079A6D4 /* Settings */,
-				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
-				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
-				24232A68172065F00079A6D4 /* TNWPullRequestViewController.h */,
-				24232A69172065F00079A6D4 /* TNWPullRequestViewController.m */,
 				24FD30EC17222D110062F242 /* Storyboard.storyboard */,
 				24232A57172065F00079A6D4 /* Supporting Files */,
+				24232A5F172065F00079A6D4 /* TNWAppDelegate.h */,
+				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
+				24232A68172065F00079A6D4 /* TNWPullRequestViewController.h */,
+				24232A69172065F00079A6D4 /* TNWPullRequestViewController.m */,
 			);
 			path = PullStatus;
 			sourceTree = "<group>";
