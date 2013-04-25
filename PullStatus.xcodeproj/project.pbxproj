@@ -77,6 +77,9 @@
 		4BDBE86C172988C2003BD76E /* repo-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE869172988C2003BD76E /* repo-cell.png */; };
 		4BDBE86D172988C2003BD76E /* repo-cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86A172988C2003BD76E /* repo-cell@2x.png */; };
 		4BDBE86E172988C2003BD76E /* repo-cell@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */; };
+		4BDBE8781729A398003BD76E /* github-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE8751729A398003BD76E /* github-button.png */; };
+		4BDBE8791729A398003BD76E /* github-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE8761729A398003BD76E /* github-button@2x.png */; };
+		4BDBE87A1729A398003BD76E /* github-button@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE8771729A398003BD76E /* github-button@2x.psd */; };
 		F6BF12BF35FA4EECA50C948C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343C680603D34D15944B5E7A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +170,9 @@
 		4BDBE869172988C2003BD76E /* repo-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "repo-cell.png"; sourceTree = "<group>"; };
 		4BDBE86A172988C2003BD76E /* repo-cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "repo-cell@2x.png"; sourceTree = "<group>"; };
 		4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "repo-cell@2x.psd"; sourceTree = "<group>"; };
+		4BDBE8751729A398003BD76E /* github-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-button.png"; sourceTree = "<group>"; };
+		4BDBE8761729A398003BD76E /* github-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-button@2x.png"; sourceTree = "<group>"; };
+		4BDBE8771729A398003BD76E /* github-button@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "github-button@2x.psd"; sourceTree = "<group>"; };
 		5FB7AD5A015D45F99E85E1EE /* Pods-PullStatusTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullStatusTests.xcconfig"; path = "Pods/Pods-PullStatusTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		88931C2158F548AE82CE3AAF /* libPods-PullStatusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PullStatusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6874E509464302A80B6890 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -368,6 +374,9 @@
 		4B86317F17297C3400E7D26D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4BDBE8751729A398003BD76E /* github-button.png */,
+				4BDBE8761729A398003BD76E /* github-button@2x.png */,
+				4BDBE8771729A398003BD76E /* github-button@2x.psd */,
 				4BDBE869172988C2003BD76E /* repo-cell.png */,
 				4BDBE86A172988C2003BD76E /* repo-cell@2x.png */,
 				4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */,
@@ -498,6 +507,9 @@
 				4BDBE86D172988C2003BD76E /* repo-cell@2x.png in Resources */,
 				4BDBE86E172988C2003BD76E /* repo-cell@2x.psd in Resources */,
 				24AE91B41728312F000C0342 /* AuthenticateView.xib in Resources */,
+				4BDBE8781729A398003BD76E /* github-button.png in Resources */,
+				4BDBE8791729A398003BD76E /* github-button@2x.png in Resources */,
+				4BDBE87A1729A398003BD76E /* github-button@2x.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

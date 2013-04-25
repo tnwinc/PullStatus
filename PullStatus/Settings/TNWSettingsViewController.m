@@ -91,7 +91,7 @@
 #pragma mark - Appearance
 
 - (void)setAppearance {
-    UIImage *barButton = [[UIImage imageNamed:@"barButton.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 5)];
+    UIImage *barButton = [[UIImage imageNamed:@"github-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 34, 0, 5)];
     [self.authenticationButton setBackgroundImage:barButton forState:UIControlStateNormal];
 }
 
