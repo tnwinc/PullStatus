@@ -38,33 +38,6 @@
 - (void)loadRepositories {
     if (self.loadingRepositories) return;
 
-    self.loadingRepositories = YES;
-    self.repositories = [[NSMutableArray alloc] init];
-    
-    NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/tnwinc/repos"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFJSONRequestOperation *operation;
-    operation = [AFJSONRequestOperation
-                 JSONRequestOperationWithRequest:request
-                 
-                 success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                     NSMutableArray *repos = self.repositories;
-                     //TODO: This loop should be out of the controller
-                     for (NSDictionary *item in JSON) {
-                         [repos addObject:[Repository instanceFromDictionary:item]];
-                     }
-                     
-                     self.loadingRepositories = NO;
-                     [self.activityView stopAnimating];
-                     [self.repositoriesTableView reloadData];
-                     [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesLoaded" object:self];
-                 }
-                 
-                 failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                     NSLog(@"Error: loading repositories: %@", error);
-                     [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesFailedToLoad" object:error];
-                 }];
-    
     [self.activityView startAnimating];
 
     assert(self.repoRetriever);

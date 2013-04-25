@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
+@property (weak, nonatomic) IBOutlet UIButton *authenticationButton;
 
 @property TNWRepoRetriever *repoRetriever;
 
