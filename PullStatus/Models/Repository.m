@@ -7,120 +7,63 @@
 //
 
 #import "Repository.h"
-
 #import "RepositoryOwner.h"
 
 @implementation Repository
 
+- (Repository *)initWithJSON:(NSDictionary *)JSON {
+    NSDateFormatter *formatter = [self class].dateFormatter;
+    
+    self = [super init];
+    if (self) {
+        self.name = JSON[@"name"];
+        if (JSON[@"description"] != (id)[NSNull null]) {
+            self.descriptionText = JSON[@"description"];
+        } else {
+            self.descriptionText = @"";
+        }
+        self.owner = [[RepositoryOwner alloc] initWithJSON:JSON[@"owner"]];
+        self.cloneUrl = [NSURL URLWithString:JSON[@"clone_url"]];
+        self.createdAt = [formatter dateFromString:JSON[@"created_at"]];
+        self.gitUrl = [NSURL URLWithString:JSON[@"git_url"]];
+        self.htmlUrl = [NSURL URLWithString:JSON[@"html_url"]];
+        self.pushedAt = [formatter dateFromString:JSON[@"pushed_at"]];
+        self.sshUrl = [NSURL URLWithString:JSON[@"ssh_url"]];
+        self.updatedAt = [formatter dateFromString:JSON[@"updated_at"]];
+        self.url = [NSURL URLWithString:JSON[@"url"]];
+    }
+    return self;
+}
+
 + (NSDateFormatter *)dateFormatter {
     static NSDateFormatter *formatter;
-
+    
     if (!formatter) {
         @synchronized(self) {
             if (!formatter) {
                 formatter = [[NSDateFormatter alloc] init];
                 assert(formatter != nil);
-
+                
                 NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
                 assert(enUSPOSIXLocale != nil);
-
+                
                 [formatter setLocale:enUSPOSIXLocale];
                 [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
                 [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
             }
         }
     }
-
+    
     assert(formatter != nil);
     return formatter;
 }
 
-+ (NSArray *)arrayOfInstancesFromArrayOfDictionaries:(NSArray *)anArray{
-    NSMutableArray *result = [[NSMutableArray alloc] init];
-
-    for (NSDictionary *item in anArray) {
-        [result addObject:[Repository instanceFromDictionary:item]];
++ (NSArray *)getRepoModels:(NSArray *)reposJSON {
+    NSMutableArray *repos = [[NSMutableArray alloc] init];
+    for (NSDictionary *repoJSON in reposJSON) {
+        [repos addObject:[[Repository alloc] initWithJSON:repoJSON]];
     }
-
-    return result;
+    return [[NSArray alloc] initWithArray:repos];
 }
-
-+ (Repository *)instanceFromDictionary:(NSDictionary *)aDictionary; {
-    Repository *instance = [[Repository alloc] init];
-    [instance setAttributesFromDictionary:aDictionary];
-    return instance;
-}
-
-- (void)setAttributesFromDictionary:(NSDictionary *)aDictionary; {
-    if (![aDictionary isKindOfClass:[NSDictionary class]]) {
-        return;
-    }
-
-    [self setValuesForKeysWithDictionary:aDictionary];
-}
-
-- (void)setValue:(id)value forKey:(NSString *)key; {
-    NSDateFormatter *formatter = [self class].dateFormatter;
-
-    if ([key isEqualToString:@"owner"]) {
-        if ([value isKindOfClass:[NSDictionary class]]) {
-            self.owner = [RepositoryOwner instanceFromDictionary:value];
-        }
-    } else if ([key isEqualToString:@"clone_url"]) {
-        self.cloneUrl = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"created_at"]) {
-        self.createdAt = [formatter dateFromString:value];
-    } else if ([key isEqualToString:@"git_url"]) {
-        self.gitUrl = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"homepage"]) {
-        self.homepage = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"html_url"]) {
-        self.htmlUrl = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"mirror_url"]) {
-        self.mirrorUrl = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"pushed_at"]) {
-        self.pushedAt = [formatter dateFromString:value];
-    } else if ([key isEqualToString:@"ssh_url"]) {
-        self.sshUrl = [NSURL URLWithString:value];
-    } else if ([key isEqualToString:@"updated_at"]) {
-        self.updatedAt = [formatter dateFromString:value];
-    } else if ([key isEqualToString:@"url"]) {
-        self.url = [NSURL URLWithString:value];
-    } else {
-        [super setValue:value forKey:key];
-    }
-}
-
-
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key; {
-    if ([key isEqualToString:@"clone_url"]) {
-        [self setValue:value forKey:@"cloneUrl"];
-    } else if ([key isEqualToString:@"created_at"]) {
-        [self setValue:value forKey:@"createdAt"];
-    } else if ([key isEqualToString:@"description"]) {
-        [self setValue:value forKey:@"descriptionText"];
-    } else if ([key isEqualToString:@"full_name"]) {
-        [self setValue:value forKey:@"fullName"];
-    } else if ([key isEqualToString:@"git_url"]) {
-        [self setValue:value forKey:@"gitUrl"];
-    } else if ([key isEqualToString:@"html_url"]) {
-        [self setValue:value forKey:@"htmlUrl"];
-    } else if ([key isEqualToString:@"id"]) {
-        [self setValue:value forKey:@"repositoryId"];
-    } else if ([key isEqualToString:@"mirror_url"]) {
-        [self setValue:value forKey:@"mirrorUrl"];
-    } else if ([key isEqualToString:@"pushed_at"]) {
-        [self setValue:value forKey:@"pushedAt"];
-    } else if ([key isEqualToString:@"ssh_url"]) {
-        [self setValue:value forKey:@"sshUrl"];
-    } else if ([key isEqualToString:@"updated_at"]) {
-        [self setValue:value forKey:@"updatedAt"];
-    } else {
-        if ([super respondsToSelector:@selector(key)]) {
-            [super setValue:value forUndefinedKey:key];
-        }
-    }
-}
-
 
 @end

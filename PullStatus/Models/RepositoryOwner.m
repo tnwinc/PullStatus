@@ -1,6 +1,6 @@
 //
 //  RepositoryOwner.m
-//  
+//
 //
 //  Created by Brendan Erwin on 4/22/13.
 //  Copyright (c) 2013. All rights reserved.
@@ -10,38 +10,16 @@
 
 @implementation RepositoryOwner
 
-+ (RepositoryOwner *)instanceFromDictionary:(NSDictionary *)aDictionary; {
-
-    RepositoryOwner *instance = [[RepositoryOwner alloc] init];
-    [instance setAttributesFromDictionary:aDictionary];
-    return instance;
-
-}
-
-- (void)setAttributesFromDictionary:(NSDictionary *)aDictionary; {
-
-    if (![aDictionary isKindOfClass:[NSDictionary class]]) {
-        return;
+- (RepositoryOwner *)initWithJSON:(NSDictionary *)JSON {
+    self = [super init];
+    if (self) {
+        self.avatarUrl = [NSURL URLWithString:JSON[@"avatar_url"]];
+        self.gravatarId = JSON[@"gravatar_id"];
+        self.repositoryOwnerId = JSON[@"id"];
+        self.login = JSON[@"login"];
+        self.url = [NSURL URLWithString:JSON[@"url"]];
     }
-
-    [self setValuesForKeysWithDictionary:aDictionary];
-
+    return self;
 }
-
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key; {
-
-    if ([key isEqualToString:@"avatar_url"]) {
-        [self setValue:value forKey:@"avatarUrl"];
-    } else if ([key isEqualToString:@"gravatar_id"]) {
-        [self setValue:value forKey:@"gravatarId"];
-    } else if ([key isEqualToString:@"id"]) {
-        [self setValue:value forKey:@"RepositoryOwnerId"];
-    } else {
-        if ([super respondsToSelector:@selector(key)]) {
-            [super setValue:value forUndefinedKey:key];
-        }
-    }
-}
-
 
 @end

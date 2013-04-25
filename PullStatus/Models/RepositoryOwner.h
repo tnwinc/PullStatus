@@ -1,6 +1,6 @@
 //
 //  RepositoryOwner.h
-//  
+//
 //
 //  Created by Brendan Erwin on 4/22/13.
 //  Copyright (c) 2013. All rights reserved.
@@ -10,14 +10,12 @@
 
 @interface RepositoryOwner : NSObject
 
-@property (nonatomic, copy) NSURL *avatarUrl;
-@property (nonatomic, copy) NSString *gravatarId;
-@property (nonatomic, copy) NSNumber *RepositoryOwnerId;
-@property (nonatomic, copy) NSString *login;
-@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, strong) NSURL *avatarUrl;
+@property (nonatomic, strong) NSString *gravatarId;
+@property (nonatomic, strong) NSNumber *repositoryOwnerId;
+@property (nonatomic, strong) NSString *login;
+@property (nonatomic, strong) NSURL *url;
 
-
-+ (RepositoryOwner *)instanceFromDictionary:(NSDictionary *)aDictionary;
-- (void)setAttributesFromDictionary:(NSDictionary *)aDictionary;
+- (RepositoryOwner *)initWithJSON:(NSDictionary *)aDictionary;
 
 @end

@@ -28,7 +28,7 @@
                  JSONRequestOperationWithRequest:request
 
                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        self.repositories = [Repository arrayOfInstancesFromArrayOfDictionaries:JSON];
+        self.repositories = [Repository getRepoModels:JSON];
         if (success) success(self.repositories);
     }
 
