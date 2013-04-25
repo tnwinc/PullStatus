@@ -64,6 +64,9 @@
 		4BDBE86617298012003BD76E /* barButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86317298012003BD76E /* barButton.png */; };
 		4BDBE86717298012003BD76E /* barButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86417298012003BD76E /* barButton@2x.png */; };
 		4BDBE86817298012003BD76E /* barButton@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86517298012003BD76E /* barButton@2x.psd */; };
+		4BDBE86C172988C2003BD76E /* repo-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE869172988C2003BD76E /* repo-cell.png */; };
+		4BDBE86D172988C2003BD76E /* repo-cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86A172988C2003BD76E /* repo-cell@2x.png */; };
+		4BDBE86E172988C2003BD76E /* repo-cell@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */; };
 		F6BF12BF35FA4EECA50C948C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343C680603D34D15944B5E7A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,9 @@
 		4BDBE86317298012003BD76E /* barButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButton.png; sourceTree = "<group>"; };
 		4BDBE86417298012003BD76E /* barButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barButton@2x.png"; sourceTree = "<group>"; };
 		4BDBE86517298012003BD76E /* barButton@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "barButton@2x.psd"; sourceTree = "<group>"; };
+		4BDBE869172988C2003BD76E /* repo-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "repo-cell.png"; sourceTree = "<group>"; };
+		4BDBE86A172988C2003BD76E /* repo-cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "repo-cell@2x.png"; sourceTree = "<group>"; };
+		4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "repo-cell@2x.psd"; sourceTree = "<group>"; };
 		5FB7AD5A015D45F99E85E1EE /* Pods-PullStatusTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullStatusTests.xcconfig"; path = "Pods/Pods-PullStatusTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		88931C2158F548AE82CE3AAF /* libPods-PullStatusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PullStatusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6874E509464302A80B6890 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -324,6 +330,9 @@
 		4B86317F17297C3400E7D26D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4BDBE869172988C2003BD76E /* repo-cell.png */,
+				4BDBE86A172988C2003BD76E /* repo-cell@2x.png */,
+				4BDBE86B172988C2003BD76E /* repo-cell@2x.psd */,
 				4BDBE85D17297DCB003BD76E /* list-icon.png */,
 				4BDBE85E17297DCB003BD76E /* list-icon@2x.png */,
 				4BDBE85F17297DCB003BD76E /* list-icon@2x.psd */,
@@ -447,6 +456,9 @@
 				4BDBE86617298012003BD76E /* barButton.png in Resources */,
 				4BDBE86717298012003BD76E /* barButton@2x.png in Resources */,
 				4BDBE86817298012003BD76E /* barButton@2x.psd in Resources */,
+				4BDBE86C172988C2003BD76E /* repo-cell.png in Resources */,
+				4BDBE86D172988C2003BD76E /* repo-cell@2x.png in Resources */,
+				4BDBE86E172988C2003BD76E /* repo-cell@2x.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

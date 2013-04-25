@@ -74,10 +74,17 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+
+        UIImage *cellBackground = [[UIImage imageNamed:@"repo-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsZero];
         
         UIView *cellBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-        cellBackgroundView.backgroundColor = [UIColor blackColor];
-        cell.selectedBackgroundView = cellBackgroundView;
+        cellBackgroundView.backgroundColor = [UIColor colorWithPatternImage:cellBackground];
+        cell.backgroundView = cellBackgroundView;
+        
+        UIView *cellSelectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cellSelectedBackgroundView.backgroundColor = [UIColor blackColor];
+        cell.selectedBackgroundView = cellSelectedBackgroundView;
+        
         cell.textLabel.textColor = [UIColor whiteColor];
     }
     
