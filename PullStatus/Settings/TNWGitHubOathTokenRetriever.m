@@ -11,7 +11,7 @@
 @implementation TNWGitHubOathTokenRetriever
 - (void)retrieveOAuthTokenForUser:(NSString *)aUser
                      withPassword:(NSString *)password
-                        andClient:(AFHTTPClient *)client
+                        andClient:(TNWHttpClient *)client
                           success:(void (^)(NSString *))success
                           failure:(void (^)(NSError *))failure {
     
@@ -24,7 +24,7 @@
 
           NSMutableDictionary *response = (NSMutableDictionary *) responseObject;
           NSString *token = response[@"token"];
-          [client setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", token]];
+          [client setAuthorizationHeaderWithBearerToken:token];
           if (success) success(token);
           
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

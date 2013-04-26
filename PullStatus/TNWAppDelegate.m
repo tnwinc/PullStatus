@@ -7,7 +7,6 @@
 //
 
 #import "TNWAppDelegate.h"
-
 #import "TNWSettingsViewController.h"
 #import "SWRevealViewController.h"
 #import "TNWAuthenicationViewController.h"
@@ -21,7 +20,7 @@
 
     [self setAppearance];
 
-    [self establishHttpClient];
+    self.httpClient = [TNWHttpClient sharedClient];
 
     [self loadRootViewController];
 
@@ -34,30 +33,16 @@
 
     [self.window makeKeyAndVisible];
 
-    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"oauth_token"];
-    if (!token) {
+    if (!self.httpClient.hasToken) {
         [self initiateAuthentication];
     }
+
     return YES;
-}
-
--(void) establishHttpClient{
-    NSURL *url = [NSURL URLWithString:@"https://api.github.com"];
-    self.httpClient = [AFHTTPClient clientWithBaseURL:url];
-
-    [self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    [self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
-    self.httpClient.parameterEncoding = AFJSONParameterEncoding;
-
-    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"oauth_token"];
-    if (token) {
-        [self.httpClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", token]];
-    }
 }
 
 - (void)loadRootViewController {
     TNWSettingsViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" andHttpClient:self.httpClient];
-    UIViewController *mainView = [[self storyboard] instantiateInitialViewController];
+    TNWPullRequestViewController *mainView = [[self storyboard] instantiateInitialViewController];
 
     self.settingsController = settingsView;
 

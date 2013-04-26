@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface TNWPullRequestViewController : UITableViewController
+
+@property (nonatomic, strong) AFHTTPClient *httpClient;
+@property NSArray *pullRequests;
+@property NSString *currentRepositoryPath;
 
 - (IBAction)settingsWasPressed:(id)sender;
 

@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
+#import "TNWHttpClient.h"
 
 @interface TNWGitHubOathTokenRetriever : NSObject
 
 -(void) retrieveOAuthTokenForUser:(NSString *)aUser
                      withPassword:(NSString *)password
-                        andClient:(AFHTTPClient *)client
+                        andClient:(TNWHttpClient *)client
                        success:(void (^)(NSString *token))success
                        failure:(void (^)(NSError *error))failure;
 

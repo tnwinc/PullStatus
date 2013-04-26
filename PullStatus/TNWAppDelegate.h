@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
 #import "TNWSettingsViewController.h"
-#import "AFNetworking.h"
+#import "TNWPullRequestViewController.h"
+#import "TNWHttpClient.h"
 
 @interface TNWAppDelegate : UIResponder <UIApplicationDelegate, SWRevealViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property TNWSettingsViewController *settingsController;
-@property AFHTTPClient *httpClient;
+@property TNWHttpClient *httpClient;
 
 -(void)setAppearance;
 

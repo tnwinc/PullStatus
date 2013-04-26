@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20553B78AB5D43CCB7576E10 /* libPods-PullStatusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88931C2158F548AE82CE3AAF /* libPods-PullStatusTests.a */; };
+		24103D88172AD38000739F61 /* TNWHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24103D87172AD38000739F61 /* TNWHttpClient.m */; };
+		24103D89172AD38000739F61 /* TNWHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24103D87172AD38000739F61 /* TNWHttpClient.m */; };
 		24232A51172065F00079A6D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A50172065F00079A6D4 /* UIKit.framework */; };
 		24232A53172065F00079A6D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A52172065F00079A6D4 /* Foundation.framework */; };
 		24232A55172065F00079A6D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24232A54172065F00079A6D4 /* CoreGraphics.framework */; };
@@ -98,6 +100,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24103D86172AD38000739F61 /* TNWHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNWHttpClient.h; sourceTree = "<group>"; };
+		24103D87172AD38000739F61 /* TNWHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWHttpClient.m; sourceTree = "<group>"; };
 		24232A4D172065F00079A6D4 /* PullStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PullStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24232A50172065F00079A6D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24232A52172065F00079A6D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -274,6 +278,8 @@
 				24232A69172065F00079A6D4 /* TNWPullRequestViewController.m */,
 				2484CC45172A0D2200134C95 /* Constants.h */,
 				2484CC46172A0D2200134C95 /* Constants.m */,
+				24103D86172AD38000739F61 /* TNWHttpClient.h */,
+				24103D87172AD38000739F61 /* TNWHttpClient.m */,
 			);
 			path = PullStatus;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				24AE91B717284362000C0342 /* TNWAuthenicationViewController.m in Sources */,
 				24AE91BB17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
 				2484CC47172A0D2200134C95 /* Constants.m in Sources */,
+				24103D88172AD38000739F61 /* TNWHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +656,7 @@
 				24AE91BC17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
 				24AE91BF172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m in Sources */,
 				2484CC48172A0D2200134C95 /* Constants.m in Sources */,
+				24103D89172AD38000739F61 /* TNWHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

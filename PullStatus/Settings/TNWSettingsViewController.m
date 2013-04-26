@@ -33,16 +33,16 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
                                                       object:nil
                                                        queue:nil
-      usingBlock:^(NSNotification *note) {
-          [self loadRepositories];
-          self.organizationMenu.dataSource = self;
-          if (self.selectedOrganization) {
-              self.organizationMenu.selectedItemIndex = [self.organizations indexOfObject:self.selectedOrganization];
-          } else {
-              self.organizationMenu.selectedItemIndex = 0;
-          }
-      }];
-    self.organizations = @[@"My Own",@"tnwinc",@"clearwavebuild",@"littlebits",@"guard",@"rhok-atl-find-my-volunteers",@"StudioNelstrom"];
+                                                  usingBlock:^(NSNotification *note) {
+        [self loadRepositories];
+        self.organizationMenu.dataSource = self;
+        if (self.selectedOrganization) {
+            self.organizationMenu.selectedItemIndex = [self.organizations indexOfObject:self.selectedOrganization];
+        } else {
+            self.organizationMenu.selectedItemIndex = 0;
+        }
+    }];
+    self.organizations = @[@"My Own", @"tnwinc", @"clearwavebuild", @"littlebits", @"guard", @"rhok-atl-find-my-volunteers", @"StudioNelstrom"];
     [self setAppearance];
 }
 
@@ -55,13 +55,13 @@
 - (void)loadRepositories {
     if (self.loadingRepositories) return;
     assert(self.httpClient);
-    
+
     [self.activityView startAnimating];
 
     assert(self.repoRetriever);
     [self.repoRetriever loadRepositoriesWithClient:self.httpClient
                                    forOrganization:self.selectedOrganization
-      success:^(NSArray *repositories) {
+                                           success:^(NSArray *repositories) {
         self.loadingRepositories = NO;
         [self.activityView stopAnimating];
         [self.repositoriesTableView reloadData];
@@ -73,7 +73,16 @@
     }];
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Repository *repository = self.repoRetriever.repositories[indexPath.item];
+    NSString *repositoryPath = repository.url.path;
+    NSLog(@"Repository Selected: %@", repositoryPath);
+    [[NSUserDefaults standardUserDefaults] setValue:repositoryPath forKey:@"repository_url"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositorySelected" object:repositoryPath];
+}
+
+#pragma mark - Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.repoRetriever.repositories.count;
@@ -130,7 +139,7 @@
 #pragma mark - org menu delegate
 - (void)scrollableTabView:(CCFScrollableTabView *)tabView didSelectItemAtIndex:(NSInteger)index;
 {
-    NSLog(@"%s - SELECTED = %d",__FUNCTION__,index);
+    NSLog(@"%s - SELECTED = %d", __FUNCTION__, index);
     if (index) {
         self.selectedOrganization = self.organizations[index];
     } else {

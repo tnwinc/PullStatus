@@ -7,6 +7,8 @@
 //
 
 #import "TNWPullRequestViewController.h"
+#import "SVProgressHUD.h"
+#import "TNWHttpClient.h"
 
 @implementation TNWPullRequestViewController
 
@@ -14,6 +16,11 @@
     [super viewDidLoad];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshPullRequests) forControlEvents:UIControlEventValueChanged];
+
+    self.httpClient = [TNWHttpClient sharedClient];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(repositorySelectedWithNotificationObject:) name:@"RepositorySelected" object:nil];
 }
 
 - (IBAction)settingsWasPressed:(id)sender {
@@ -21,10 +28,40 @@
                                                         object:nil];
 }
 
+-(void)refreshPullRequests {
+    [self refreshPullRequestsWithRepositoryPath:self.currentRepositoryPath];
+}
+
+-(void)refreshPullRequestsWithRepositoryPath:(NSString *)repositoryPath {
+    NSString *path = [NSString stringWithFormat:@"%@/pulls", repositoryPath];
+    [self.refreshControl beginRefreshing];
+
+    void (^cleanUp)() = ^(){
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    };
+
+    [self.httpClient getPath:path parameters:nil
+                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                         NSLog(@"Got Pull Requests: %@", responseObject);
+                         self.pullRequests = responseObject;
+                         cleanUp();
+
+                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                         [SVProgressHUD showErrorWithStatus:@"Failed to load pull requests."];
+                         cleanUp();
+                     }];
+}
+
+-(void)repositorySelectedWithNotificationObject:(NSNotification *)notificationObject{
+    self.currentRepositoryPath = notificationObject.object;
+    [self refreshPullRequestsWithRepositoryPath:self.currentRepositoryPath];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.pullRequests.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -35,8 +72,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
 
-    cell.textLabel.text = @"test";
-    cell.detailTextLabel.text = indexPath.description;
+    NSInteger index = indexPath.item;
+    NSDictionary *pullRequest = [self.pullRequests objectAtIndex:index];
+
+    cell.textLabel.text = pullRequest[@"title"];
+    cell.detailTextLabel.text = pullRequest[@"body"];
 
     return cell;
 }
