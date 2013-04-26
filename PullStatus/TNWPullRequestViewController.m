@@ -17,6 +17,7 @@
 
     self.tableView.contentInset = UIEdgeInsetsMake(5.0, 0, 5.0, 0);
     
+    self.statusReports = [[NSMutableDictionary alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshPullRequests) forControlEvents:UIControlEventValueChanged];
 
@@ -42,7 +43,7 @@
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     };
-
+    [self.statusReports removeAllObjects];
     [self.httpClient getPath:path parameters:nil
                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
                          NSLog(@"Got Pull Requests: %@", responseObject);
@@ -58,6 +59,24 @@
 -(void)repositorySelectedWithNotificationObject:(NSNotification *)notificationObject{
     self.currentRepositoryPath = notificationObject.object;
     [self refreshPullRequestsWithRepositoryPath:self.currentRepositoryPath];
+}
+
+-(void)initiateStatusRequestForIndexPath:(NSIndexPath *)indexPath withSHA:(NSString *)sha {
+    NSString *path = [NSString stringWithFormat:@"%@/statuses/%@",self.currentRepositoryPath, sha];
+
+    [self.httpClient getPath:path parameters:nil
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          NSArray *statuses = responseObject;
+          if (statuses.count > 0) {
+              NSDictionary *status = [statuses objectAtIndex:0];
+              NSLog(@"Got status for %@: %@", sha, status);
+
+              [self.statusReports setValue:status forKey:[NSString stringWithFormat:@"%d", indexPath.item]];
+              [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+          }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed to load status for %@", sha);
+    }];
 }
 
 #pragma mark - Table view data source
@@ -85,7 +104,13 @@
     NSDictionary *pullRequest = [self.pullRequests objectAtIndex:index];
 
     cell.textLabel.text = pullRequest[@"title"];
-    cell.detailTextLabel.text = pullRequest[@"body"];
+    NSDictionary *status = self.statusReports[[NSString stringWithFormat:@"%d", index]];
+    if (status) {
+        cell.detailTextLabel.text = status[@"description"];
+    } else {
+        [self initiateStatusRequestForIndexPath:indexPath withSHA:pullRequest[@"head"][@"sha"]];
+        cell.detailTextLabel.text = pullRequest[@"body"];
+    }
 
     return cell;
 }

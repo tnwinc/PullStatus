@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @property NSArray *pullRequests;
+@property NSMutableDictionary *statusReports;
 @property NSString *currentRepositoryPath;
 
 - (IBAction)settingsWasPressed:(id)sender;
