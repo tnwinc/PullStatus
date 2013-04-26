@@ -33,8 +33,8 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
                                                       object:nil
                                                        queue:nil
-                                                  usingBlock:^(NSNotification *note) {
-        [self loadRepositories];
+      usingBlock:^(NSNotification *note) {
+          [self loadRepositories];
     }];
     [self setAppearance];
 }
@@ -52,8 +52,7 @@
     [self.activityView startAnimating];
 
     assert(self.repoRetriever);
-    [self.repoRetriever loadRepositoriesForUser:@"tnwinc"
-                                     withClient:self.httpClient
+    [self.repoRetriever loadRepositoriesWithClient:self.httpClient
       success:^(NSArray *repositories) {
         self.loadingRepositories = NO;
         [self.activityView stopAnimating];

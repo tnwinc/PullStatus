@@ -14,9 +14,7 @@
 @property NSArray *repositories;
 @property NSURL *requestedURL;
 
--(NSURL*)URLWithUsername:aName;
--(void)loadRepositoriesForUser:(NSString *)aUser
-                    withClient:(AFOAuth2Client *)client
+-(void)loadRepositoriesWithClient:(AFOAuth2Client *)client
                        success:(void (^)(NSArray *repositories))success
                        failure:(void (^)(NSError *error))failure;
 

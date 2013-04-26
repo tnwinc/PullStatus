@@ -12,13 +12,7 @@
 
 @implementation TNWRepoRetriever
 
-- (NSURL *)URLWithUsername:(id)aName {
-    NSString *url = [NSString stringWithFormat:@"https://api.github.com/user/repos", aName];
-    return [NSURL URLWithString:url];
-}
-
-- (void)loadRepositoriesForUser:(NSString *)aUser
-                     withClient:(AFOAuth2Client *)client
+- (void)loadRepositoriesWithClient:(AFOAuth2Client *)client
                         success:(void (^)(NSArray *repositories))success
                         failure:(void (^)(NSError *error))failure {
     assert(client);
