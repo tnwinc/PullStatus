@@ -59,6 +59,7 @@
 }
 
 + (NSArray *)getRepoModels:(NSArray *)reposJSON {
+    NSAssert(reposJSON, @"Must provide an array");
     NSMutableArray *repos = [[NSMutableArray alloc] init];
     for (NSDictionary *repoJSON in reposJSON) {
         [repos addObject:[[Repository alloc] initWithJSON:repoJSON]];

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFOAuth2Client.h"
 
 @interface TNWRepoRetriever : NSObject
 
@@ -15,7 +16,8 @@
 
 -(NSURL*)URLWithUsername:aName;
 -(void)loadRepositoriesForUser:(NSString *)aUser
+                    withClient:(AFOAuth2Client *)client
                        success:(void (^)(NSArray *repositories))success
-                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON))failure;
+                       failure:(void (^)(NSError *error))failure;
 
 @end

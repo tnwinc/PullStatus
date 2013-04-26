@@ -11,6 +11,7 @@
 #import "TNWSettingsViewController.h"
 #import "SWRevealViewController.h"
 #import "TNWAuthenicationViewController.h"
+#import "AFNetworking.h"
 
 @implementation TNWAppDelegate
 
@@ -19,6 +20,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [self setAppearance];
+
+    [self establishHttpClient];
+
     [self loadRootViewController];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -26,13 +30,22 @@
                                                  name:@"ReUpAuthentication"
                                                object:nil];
 
+    
+
     [self.window makeKeyAndVisible];
 
     return YES;
 }
 
+-(void) establishHttpClient{
+    NSURL *url = [NSURL URLWithString:@"https://api.github.com"];
+    self.httpClient = [AFOAuth2Client clientWithBaseURL:url clientID:@"" secret:@""];
+    [self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
+}
+
 - (void)loadRootViewController {
-    TNWSettingsViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+    TNWSettingsViewController *settingsView = [[TNWSettingsViewController alloc] initWithNibName:@"SettingsView" andHttpClient:self.httpClient];
     UIViewController *mainView = [[self storyboard] instantiateInitialViewController];
 
     self.settingsController = settingsView;
@@ -54,7 +67,7 @@
 }
 
 -(void) initiateAuthentication {
-    TNWAuthenicationViewController *vc = [[TNWAuthenicationViewController alloc]initWithNibName:@"AuthenticateView" bundle:nil];
+    TNWAuthenicationViewController *vc = [[TNWAuthenicationViewController alloc]initWithNibName:@"AuthenticateView" andHttpClient:self.httpClient];
     [self.window.rootViewController presentViewController:vc animated:YES completion:^{
 
     }];

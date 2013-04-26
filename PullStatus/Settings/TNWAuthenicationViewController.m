@@ -15,11 +15,11 @@
 
 @implementation TNWAuthenicationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
-        // Custom initialization
+        self.httpClient = httpClient;
     }
     return self;
 }
@@ -35,6 +35,7 @@
 
     [retriever retrieveOAuthTokenForUser:self.userNameOrEmailTextField.text
                             withPassword:self.passwordTextField.text
+                               andClient:self.httpClient
                                  success:^{
                                      [self dismissViewControllerAnimated:YES completion:nil];
                                  } failure:^(NSError *error) {

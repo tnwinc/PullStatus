@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFOAuth2Client.h"
 
 static NSString *const kClientID = @"afc2d14f7ed691a50027";
 static NSString *const kClientSecret = @"3de36cf4f344f9aadd985bd0f31d01d1ee2d29b5";
@@ -15,6 +16,7 @@ static NSString *const kClientSecret = @"3de36cf4f344f9aadd985bd0f31d01d1ee2d29b
 
 -(void) retrieveOAuthTokenForUser:(NSString *)aUser
                      withPassword:(NSString *)password
+                        andClient:(AFOAuth2Client *)client
                        success:(void (^)())success
                        failure:(void (^)(NSError *error))failure;
 

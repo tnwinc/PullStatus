@@ -7,7 +7,6 @@
 //
 
 #import "TNWSettingsViewController.h"
-#import "AFNetworking.h"
 #import "Repository.h"
 
 @interface TNWSettingsViewController ()
@@ -17,15 +16,26 @@
 
 @implementation TNWSettingsViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient {
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
+
+    if (self) {
+        assert(httpClient);
+        self.httpClient = httpClient;
+    }
+
+    return self;
+}
+
 - (void)viewDidLoad {
     self.repoRetriever = [[TNWRepoRetriever alloc] init];
-    
+
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SettingsShown"
                                                       object:nil
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
-                                                      [self loadRepositories];
-                                                  }];
+        [self loadRepositories];
+    }];
     [self setAppearance];
 }
 
@@ -37,17 +47,20 @@
 
 - (void)loadRepositories {
     if (self.loadingRepositories) return;
-
+    assert(self.httpClient);
+    
     [self.activityView startAnimating];
 
     assert(self.repoRetriever);
-    [self.repoRetriever loadRepositoriesForUser:@"tnwinc" success:^(NSArray *repositories) {
+    [self.repoRetriever loadRepositoriesForUser:@"tnwinc"
+                                     withClient:self.httpClient
+      success:^(NSArray *repositories) {
         self.loadingRepositories = NO;
         [self.activityView stopAnimating];
         [self.repositoriesTableView reloadData];
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesLoaded" object:self];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    } failure:^(NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesFailedToLoad" object:error];
     }];
 }
@@ -61,29 +74,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"RCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 
         UIImage *cellBackground = [[UIImage imageNamed:@"repo-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsZero];
-        
+
         UIView *cellBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cellBackgroundView.backgroundColor = [UIColor colorWithPatternImage:cellBackground];
         cell.backgroundView = cellBackgroundView;
-        
+
         UIView *cellSelectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cellSelectedBackgroundView.backgroundColor = [UIColor blackColor];
         cell.selectedBackgroundView = cellSelectedBackgroundView;
-        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textColor = [UIColor whiteColor];
     }
 
     Repository *repo = [self.repoRetriever.repositories objectAtIndex:indexPath.item];
     assert(repo);
-    
+
     cell.textLabel.text = repo.name;
     cell.detailTextLabel.text = repo.descriptionText;
-    
+
     assert(cell);
     return cell;
 }

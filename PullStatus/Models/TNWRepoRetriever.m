@@ -13,31 +13,29 @@
 @implementation TNWRepoRetriever
 
 - (NSURL *)URLWithUsername:(id)aName {
-    NSString *url = [NSString stringWithFormat:@"https://api.github.com/users/%@/repos", aName];
+    NSString *url = [NSString stringWithFormat:@"https://api.github.com/user/repos", aName];
     return [NSURL URLWithString:url];
 }
 
 - (void)loadRepositoriesForUser:(NSString *)aUser
+                     withClient:(AFOAuth2Client *)client
                         success:(void (^)(NSArray *repositories))success
-                        failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON))failure {
-    self.requestedURL = [self URLWithUsername:aUser];
+                        failure:(void (^)(NSError *error))failure {
+    assert(client);
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.requestedURL];
-    AFJSONRequestOperation *operation;
-    operation = [AFJSONRequestOperation
-                 JSONRequestOperationWithRequest:request
-
-                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        self.repositories = [Repository getRepoModels:JSON];
-        if (success) success(self.repositories);
-    }
-
-                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Error: loading repositories: %@", error);
-        if (failure) failure(request, response, error, JSON);
+    [client getPath:@"user/repos" parameters:nil
+            success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:NO];
+                self.repositories = [Repository getRepoModels:responseObject];
+                if (success) success(self.repositories);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:NO];
+                NSLog(@"Error: loading repositories: %@", error);
+                if (failure) failure(error);
     }];
 
-    [operation start];
 }
 
 @end
