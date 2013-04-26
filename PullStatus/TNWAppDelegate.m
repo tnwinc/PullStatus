@@ -39,7 +39,7 @@
 
 -(void) establishHttpClient{
     NSURL *url = [NSURL URLWithString:@"https://api.github.com"];
-    self.httpClient = [AFOAuth2Client clientWithBaseURL:url clientID:@"" secret:@""];
+    self.httpClient = [AFOAuth2Client clientWithBaseURL:url clientID:kClientID secret:kClientSecret];
     [self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
 }

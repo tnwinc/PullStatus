@@ -29,6 +29,8 @@
 		24597B58172818C700DC53A7 /* TNWRepoRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 24597B56172818C700DC53A7 /* TNWRepoRetriever.m */; };
 		24597B5A1728265B00DC53A7 /* RepoRetrieverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24597B591728265B00DC53A7 /* RepoRetrieverSpec.m */; };
 		24608C8B17258634006ACA7D /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24608C8A17258634006ACA7D /* RepositoryModel.m */; };
+		2484CC47172A0D2200134C95 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484CC46172A0D2200134C95 /* Constants.m */; };
+		2484CC48172A0D2200134C95 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2484CC46172A0D2200134C95 /* Constants.m */; };
 		24869ACB17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
 		24869ACC17271CDA00094B01 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 24869ACA17271CDA00094B01 /* Repository.m */; };
 		24869ACE17272B0300094B01 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24869ACD17272B0300094B01 /* MobileCoreServices.framework */; };
@@ -126,6 +128,8 @@
 		24597B56172818C700DC53A7 /* TNWRepoRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNWRepoRetriever.m; sourceTree = "<group>"; };
 		24597B591728265B00DC53A7 /* RepoRetrieverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoRetrieverSpec.m; sourceTree = "<group>"; };
 		24608C8A17258634006ACA7D /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
+		2484CC45172A0D2200134C95 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2484CC46172A0D2200134C95 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		24869AC917271CDA00094B01 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		24869ACA17271CDA00094B01 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		24869ACD17272B0300094B01 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -270,6 +274,8 @@
 				24232A60172065F00079A6D4 /* TNWAppDelegate.m */,
 				24232A68172065F00079A6D4 /* TNWPullRequestViewController.h */,
 				24232A69172065F00079A6D4 /* TNWPullRequestViewController.m */,
+				2484CC45172A0D2200134C95 /* Constants.h */,
+				2484CC46172A0D2200134C95 /* Constants.m */,
 			);
 			path = PullStatus;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				24597B57172818C700DC53A7 /* TNWRepoRetriever.m in Sources */,
 				24AE91B717284362000C0342 /* TNWAuthenicationViewController.m in Sources */,
 				24AE91BB17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
+				2484CC47172A0D2200134C95 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +652,7 @@
 				24AE91B817284362000C0342 /* TNWAuthenicationViewController.m in Sources */,
 				24AE91BC17286869000C0342 /* TNWGitHubOathTokenRetriever.m in Sources */,
 				24AE91BF172868B6000C0342 /* GitHubOauthTokenRetrieverSpec.m in Sources */,
+				2484CC48172A0D2200134C95 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
