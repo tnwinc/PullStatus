@@ -10,9 +10,11 @@
 #import "SWRevealViewController.h"
 #import "TNWRepoRetriever.h"
 #import "AFNetworking.h"
+#import "CCFScrollableTabView.h"
 
 @interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet CCFScrollableTabView *organizationMenu;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
 @property (weak, nonatomic) IBOutlet UIButton *authenticationButton;

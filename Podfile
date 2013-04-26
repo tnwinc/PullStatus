@@ -2,7 +2,7 @@ platform :ios, '6.0'
 
 pod 'SWRevealViewController'
 pod 'AFNetworking'
-pod 'MKHorizMenu'
+pod 'CCFScrollingTabBar'
 pod 'SVProgressHUD'
 
 target :PullStatusTests, :exclusive => true do

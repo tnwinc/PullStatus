@@ -10,6 +10,7 @@
 #import "Repository.h"
 
 @interface TNWSettingsViewController ()
+@property NSArray *organizations;
 @property BOOL loadingRepositories;
 - (void)setAppearance;
 @end
@@ -57,6 +58,7 @@
         self.loadingRepositories = NO;
         [self.activityView stopAnimating];
         [self.repositoriesTableView reloadData];
+        [self.organizationMenu reloadInputViews];
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"RepositoriesLoaded" object:self];
     } failure:^(NSError *error) {
@@ -98,6 +100,25 @@
 
     assert(cell);
     return cell;
+}
+
+#pragma mark - org menu datasource
+
+- (UIColor *)textColorInScrollableTabView:(CCFScrollableTabView *)tabView {
+    return [UIColor whiteColor];
+}
+
+- (UIColor *)darkColorInScrollableTabView:(CCFScrollableTabView *)tabView {
+    return [UIColor colorWithWhite:0.074 alpha:1.000];
+}
+
+- (UIColor *)lightColorInScrollableTabView:(CCFScrollableTabView *)tabView {
+    return [UIColor colorWithRed:0.101 green:0.106 blue:0.118 alpha:1.000];
+}
+
+- (NSArray *)titlesInScrollableTabView:(CCFScrollableTabView *)tabView {
+//    return self.organizations;
+    return @[@"Mine",@"tnwinc",@"clearwavebuild",@"littlebits",@"guard",@"rhok-atl-find-my-volunteers",@"StudioNeldstrom"];
 }
 
 #pragma mark - Appearance
