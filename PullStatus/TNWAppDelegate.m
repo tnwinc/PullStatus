@@ -34,6 +34,10 @@
 
     [self.window makeKeyAndVisible];
 
+    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"oauth_token"];
+    if (!token) {
+        [self initiateAuthentication];
+    }
     return YES;
 }
 
