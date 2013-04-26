@@ -46,7 +46,6 @@
     [self.statusReports removeAllObjects];
     [self.httpClient getPath:path parameters:nil
                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                         NSLog(@"Got Pull Requests: %@", responseObject);
                          self.pullRequests = responseObject;
                          cleanUp();
 
@@ -67,14 +66,17 @@
     [self.httpClient getPath:path parameters:nil
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
           NSArray *statuses = responseObject;
+          NSDictionary *status = nil;
           if (statuses.count > 0) {
-              NSDictionary *status = [statuses objectAtIndex:0];
-              NSLog(@"Got status for %@: %@", sha, status);
-
-              [self.statusReports setValue:status forKey:[NSString stringWithFormat:@"%d", indexPath.item]];
-              [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+              status = [statuses objectAtIndex:0];
+          } else {
+              NSDictionary *pullRequest = [self.pullRequests objectAtIndex:indexPath.item];
+              status = @{ @"description":pullRequest[@"body"], @"state": @"none" };
           }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          [self.statusReports setValue:status forKey:[NSString stringWithFormat:@"%d", indexPath.item]];
+          [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed to load status for %@", sha);
     }];
 }
@@ -92,7 +94,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         
-        UIImage *cellBackgroundImage = [[UIImage imageNamed:@"pr-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 6.0, 12.0, 6.0)];
+        UIImage *cellBackgroundImage = [[UIImage imageNamed:@"pr-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 7.0, 12.0, 7.0)];
         UIImageView *cellBackgroundView = [[UIImageView alloc] initWithFrame:cell.frame];
         cellBackgroundView.image = cellBackgroundImage;
         cell.backgroundView = cellBackgroundView;
@@ -107,9 +109,16 @@
     NSDictionary *status = self.statusReports[[NSString stringWithFormat:@"%d", index]];
     if (status) {
         cell.detailTextLabel.text = status[@"description"];
+        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"status-icon-%@.png", status[@"state"]]];
     } else {
         [self initiateStatusRequestForIndexPath:indexPath withSHA:pullRequest[@"head"][@"sha"]];
         cell.detailTextLabel.text = pullRequest[@"body"];
+        cell.imageView.image = [UIImage imageNamed:@"status-icon-none.png"];
+        
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(10.0, 0, 50.0, 60.0)];
+        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        [cell.imageView addSubview:spinner];
+        [spinner startAnimating];
     }
 
     return cell;
