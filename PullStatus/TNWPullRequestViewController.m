@@ -15,6 +15,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.tableView.contentInset = UIEdgeInsetsMake(5.0, 0, 5.0, 0);
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshPullRequests) forControlEvents:UIControlEventValueChanged];
 
@@ -70,6 +72,13 @@
 
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        
+        UIImage *cellBackgroundImage = [[UIImage imageNamed:@"pr-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 6.0, 12.0, 6.0)];
+        UIImageView *cellBackgroundView = [[UIImageView alloc] initWithFrame:cell.frame];
+        cellBackgroundView.image = cellBackgroundImage;
+        cell.backgroundView = cellBackgroundView;
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     }
 
     NSInteger index = indexPath.item;

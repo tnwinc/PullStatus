@@ -86,6 +86,9 @@
 		4BDBE88A1729AD51003BD76E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE8891729AD51003BD76E /* Default.png */; };
 		4BDBE88C1729AD5D003BD76E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE88B1729AD5D003BD76E /* Default@2x.png */; };
 		4BDBE88E1729AD63003BD76E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBE88D1729AD63003BD76E /* Default-568h@2x.png */; };
+		4BE78F72172B0B1600D55AE4 /* pr-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE78F6F172B0B1600D55AE4 /* pr-cell.png */; };
+		4BE78F73172B0B1600D55AE4 /* pr-cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE78F70172B0B1600D55AE4 /* pr-cell@2x.png */; };
+		4BE78F74172B0B1600D55AE4 /* pr-cell@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4BE78F71172B0B1600D55AE4 /* pr-cell@2x.psd */; };
 		F6BF12BF35FA4EECA50C948C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343C680603D34D15944B5E7A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +191,9 @@
 		4BDBE8891729AD51003BD76E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4BDBE88B1729AD5D003BD76E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4BDBE88D1729AD63003BD76E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4BE78F6F172B0B1600D55AE4 /* pr-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pr-cell.png"; sourceTree = "<group>"; };
+		4BE78F70172B0B1600D55AE4 /* pr-cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pr-cell@2x.png"; sourceTree = "<group>"; };
+		4BE78F71172B0B1600D55AE4 /* pr-cell@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pr-cell@2x.psd"; sourceTree = "<group>"; };
 		5FB7AD5A015D45F99E85E1EE /* Pods-PullStatusTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullStatusTests.xcconfig"; path = "Pods/Pods-PullStatusTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		88931C2158F548AE82CE3AAF /* libPods-PullStatusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PullStatusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6874E509464302A80B6890 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -393,6 +399,9 @@
 		4B86317F17297C3400E7D26D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4BE78F6F172B0B1600D55AE4 /* pr-cell.png */,
+				4BE78F70172B0B1600D55AE4 /* pr-cell@2x.png */,
+				4BE78F71172B0B1600D55AE4 /* pr-cell@2x.psd */,
 				4BDBE8751729A398003BD76E /* github-button.png */,
 				4BDBE87B1729AC87003BD76E /* icon-57.png */,
 				4BDBE87C1729AC87003BD76E /* icon-57@2x.png */,
@@ -536,6 +545,9 @@
 				4BDBE88A1729AD51003BD76E /* Default.png in Resources */,
 				4BDBE88C1729AD5D003BD76E /* Default@2x.png in Resources */,
 				4BDBE88E1729AD63003BD76E /* Default-568h@2x.png in Resources */,
+				4BE78F72172B0B1600D55AE4 /* pr-cell.png in Resources */,
+				4BE78F73172B0B1600D55AE4 /* pr-cell@2x.png in Resources */,
+				4BE78F74172B0B1600D55AE4 /* pr-cell@2x.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
