@@ -47,6 +47,7 @@
 
     [self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
+    self.httpClient.parameterEncoding = AFJSONParameterEncoding;
 
     NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"oauth_token"];
     if (token) {
