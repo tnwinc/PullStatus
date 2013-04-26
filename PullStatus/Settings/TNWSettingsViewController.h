@@ -12,15 +12,18 @@
 #import "AFNetworking.h"
 #import "CCFScrollableTabView.h"
 
-@interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CCFScrollableTabViewDataSource, CCFScrollableTabViewDelegate>
 
 @property (weak, nonatomic) IBOutlet CCFScrollableTabView *organizationMenu;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
 @property (weak, nonatomic) IBOutlet UIButton *authenticationButton;
-@property AFHTTPClient *httpClient;
 
+@property AFHTTPClient *httpClient;
 @property TNWRepoRetriever *repoRetriever;
+
+@property NSString *selectedOrganization;
+@property NSArray *organizations;
 
 - (IBAction)userPressedAuthenticationButton:(id)sender;
 

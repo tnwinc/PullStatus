@@ -10,7 +10,6 @@
 #import "Repository.h"
 
 @interface TNWSettingsViewController ()
-@property NSArray *organizations;
 @property BOOL loadingRepositories;
 - (void)setAppearance;
 @end
@@ -36,7 +35,14 @@
                                                        queue:nil
       usingBlock:^(NSNotification *note) {
           [self loadRepositories];
-    }];
+          self.organizationMenu.dataSource = self;
+          if (self.selectedOrganization) {
+              self.organizationMenu.selectedItemIndex = [self.organizations indexOfObject:self.selectedOrganization];
+          } else {
+              self.organizationMenu.selectedItemIndex = 0;
+          }
+      }];
+    self.organizations = @[@"My Own",@"tnwinc",@"clearwavebuild",@"littlebits",@"guard",@"rhok-atl-find-my-volunteers",@"StudioNelstrom"];
     [self setAppearance];
 }
 
@@ -54,6 +60,7 @@
 
     assert(self.repoRetriever);
     [self.repoRetriever loadRepositoriesWithClient:self.httpClient
+                                   forOrganization:self.selectedOrganization
       success:^(NSArray *repositories) {
         self.loadingRepositories = NO;
         [self.activityView stopAnimating];
@@ -113,13 +120,25 @@
 }
 
 - (UIColor *)lightColorInScrollableTabView:(CCFScrollableTabView *)tabView {
-    return [UIColor colorWithRed:0.101 green:0.106 blue:0.118 alpha:1.000];
+    return [UIColor colorWithRed:0.188 green:0.198 blue:0.220 alpha:1.000];
 }
 
 - (NSArray *)titlesInScrollableTabView:(CCFScrollableTabView *)tabView {
-//    return self.organizations;
-    return @[@"Mine",@"tnwinc",@"clearwavebuild",@"littlebits",@"guard",@"rhok-atl-find-my-volunteers",@"StudioNeldstrom"];
+    return self.organizations;
 }
+
+#pragma mark - org menu delegate
+- (void)scrollableTabView:(CCFScrollableTabView *)tabView didSelectItemAtIndex:(NSInteger)index;
+{
+    NSLog(@"%s - SELECTED = %d",__FUNCTION__,index);
+    if (index) {
+        self.selectedOrganization = self.organizations[index];
+    } else {
+        self.selectedOrganization = nil;
+    }
+    [self loadRepositories];
+}
+
 
 #pragma mark - Appearance
 

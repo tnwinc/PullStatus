@@ -14,8 +14,9 @@
 @property NSArray *repositories;
 @property NSURL *requestedURL;
 
--(void)loadRepositoriesWithClient:(AFHTTPClient *)client
-                       success:(void (^)(NSArray *repositories))success
-                       failure:(void (^)(NSError *error))failure;
+- (void)loadRepositoriesWithClient:(AFHTTPClient *)client
+                   forOrganization:(NSString *)organization
+                           success:(void (^)(NSArray *repositories))success
+                           failure:(void (^)(NSError *error))failure;
 
 @end
