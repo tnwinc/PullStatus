@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
-#import "AFOAuth2Client.h"
 #import "TNWSettingsViewController.h"
+#import "AFNetworking.h"
 
 @interface TNWAppDelegate : UIResponder <UIApplicationDelegate, SWRevealViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property TNWSettingsViewController *settingsController;
-@property AFOAuth2Client *httpClient;
+@property AFHTTPClient *httpClient;
 
 -(void)setAppearance;
 

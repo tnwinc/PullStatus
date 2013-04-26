@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AFOAuth2Client.h"
+#import "AFNetworking.h"
 
 @interface TNWAuthenicationViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameOrEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property AFOAuth2Client *httpClient;
+@property AFHTTPClient *httpClient;
 
 - (IBAction)userDidPressAuthorize:(id)sender;
 
--(id) initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient;
+-(id) initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFHTTPClient *)httpClient;
 @end

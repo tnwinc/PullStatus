@@ -16,7 +16,7 @@
 
 @implementation TNWSettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient {
+- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFHTTPClient *)httpClient {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
 
     if (self) {

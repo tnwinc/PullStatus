@@ -8,6 +8,7 @@
 
 #import "TNWAuthenicationViewController.h"
 #import "TNWGitHubOathTokenRetriever.h"
+#import "SVProgressHUD.h"
 
 @interface TNWAuthenicationViewController ()
 
@@ -15,7 +16,7 @@
 
 @implementation TNWAuthenicationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient
+- (id)initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFHTTPClient *)httpClient
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
@@ -36,10 +37,11 @@
     [retriever retrieveOAuthTokenForUser:self.userNameOrEmailTextField.text
                             withPassword:self.passwordTextField.text
                                andClient:self.httpClient
-                                 success:^{
+                                 success:^(NSString *token){
+                                     [SVProgressHUD showSuccessWithStatus:@"Authenticated"];
                                      [self dismissViewControllerAnimated:YES completion:nil];
                                  } failure:^(NSError *error) {
-                                         //TODO: display error
+                                     [SVProgressHUD showErrorWithStatus:@"Login Failed"];
                                  }];
 }
 @end

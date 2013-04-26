@@ -7,12 +7,11 @@
 //
 
 #import "TNWRepoRetriever.h"
-#import "AFNetworking.h"
 #import "Repository.h"
 
 @implementation TNWRepoRetriever
 
-- (void)loadRepositoriesWithClient:(AFOAuth2Client *)client
+- (void)loadRepositoriesWithClient:(AFHTTPClient *)client
                         success:(void (^)(NSArray *repositories))success
                         failure:(void (^)(NSError *error))failure {
     assert(client);

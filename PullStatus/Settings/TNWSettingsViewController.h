@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
-#import "AFOAuth2Client.h"
 #import "TNWRepoRetriever.h"
+#import "AFNetworking.h"
 
 @interface TNWSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (weak, nonatomic) IBOutlet UITableView *repositoriesTableView;
 @property (weak, nonatomic) IBOutlet UIButton *authenticationButton;
-@property AFOAuth2Client *httpClient;
+@property AFHTTPClient *httpClient;
 
 @property TNWRepoRetriever *repoRetriever;
 
@@ -24,5 +24,5 @@
 
 -(void) loadRepositories;
 
--(id) initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFOAuth2Client *)httpClient;
+-(id) initWithNibName:(NSString *)nibNameOrNil andHttpClient:(AFHTTPClient *)httpClient;
 @end

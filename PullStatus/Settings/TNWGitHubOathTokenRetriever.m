@@ -11,23 +11,22 @@
 @implementation TNWGitHubOathTokenRetriever
 - (void)retrieveOAuthTokenForUser:(NSString *)aUser
                      withPassword:(NSString *)password
-                        andClient:(AFOAuth2Client *)client
-                          success:(void (^)())success
+                        andClient:(AFHTTPClient *)client
+                          success:(void (^)(NSString *))success
                           failure:(void (^)(NSError *))failure {
+    
     NSDictionary *params = @{ @"client_id": kClientID, @"client_secret": kClientSecret, @"scopes": @[@"repo"] };
 
     client.parameterEncoding = AFJSONParameterEncoding;
-    [client clearAuthorizationHeader];
     [client setAuthorizationHeaderWithUsername:aUser password:password];
-    [client authenticateUsingOAuthWithPath:@"/authorizations"
-                                parameters:params
-                                   success:^(AFOAuthCredential *credential) {
-        [AFOAuthCredential storeCredential:credential
-                            withIdentifier:client.serviceProviderIdentifier];
-
-        [client setAuthorizationHeaderWithToken:credential.accessToken];
-        if (success) success();
-    } failure:^(NSError *error) {
+    [client postPath:@"/authorizations" parameters:params
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          NSMutableDictionary *response = (NSMutableDictionary *) responseObject;
+          NSString *token = response[@"token"];
+          [client setDefaultHeader:@"Bearer" value:token];
+          if (success) success(token);
+          
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error while retrieving OAuth Token: %@", error);
         if (failure) failure(error);
     }];

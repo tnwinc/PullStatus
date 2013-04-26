@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFOAuth2Client.h"
+#import "AFNetworking.h"
 
 @interface TNWRepoRetriever : NSObject
 
 @property NSArray *repositories;
 @property NSURL *requestedURL;
 
--(void)loadRepositoriesWithClient:(AFOAuth2Client *)client
+-(void)loadRepositoriesWithClient:(AFHTTPClient *)client
                        success:(void (^)(NSArray *repositories))success
                        failure:(void (^)(NSError *error))failure;
 
