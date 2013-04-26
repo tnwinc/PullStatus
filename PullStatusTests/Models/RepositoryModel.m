@@ -20,9 +20,8 @@ describe(@"Repository Model", ^{
             NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Repository" ofType:@"json"];
             sourceDictionary = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
                                                                options:NSJSONReadingAllowFragments error:nil];
-            cut = [Repository instanceFromDictionary:sourceDictionary];
+            cut = [[Repository alloc ] initWithJSON:sourceDictionary];
         });
-
 
         it(@"should create the repository", ^{
             [cut shouldNotBeNil];
@@ -40,15 +39,12 @@ describe(@"Repository Model", ^{
             [[cut.cloneUrl should] equal:[NSURL URLWithString:@"https://github.com/octocat/Hello-World.git"]];
             [[cut.gitUrl should] equal:[NSURL URLWithString:@"git://github.com/octocat/Hello-World.git"]];
             [[cut.sshUrl should] equal:[NSURL URLWithString:@"git@github.com:octocat/Hello-World.git"]];
-            [[cut.mirrorUrl should] equal:[NSURL URLWithString:@"git://git.example.com/octocat/Hello-World"]];
-            [[cut.homepage should] equal:[NSURL URLWithString:@"https://github.com"]];
             [[cut.createdAt should] equal:[[Repository dateFormatter] dateFromString:@"2011-01-26T19:01:12Z"]];
         });
 
         it(@"should really return URLs", ^{
             [[cut.url.class.description should] equal:@"NSURL"];
         });
-
 
         describe(@"load from array", ^{
             __block NSArray *cutArray;
@@ -58,7 +54,7 @@ describe(@"Repository Model", ^{
                 NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Repositories" ofType:@"json"];
                 sourceArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
                                                               options:NSJSONReadingAllowFragments error:nil];
-                cutArray = [Repository arrayOfInstancesFromArrayOfDictionaries:sourceArray];
+                cutArray = [Repository repoModelsFromJSON:sourceArray];
             });
 
             it(@"should create some repositories", ^{
