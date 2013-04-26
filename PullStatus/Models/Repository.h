@@ -29,7 +29,7 @@
 @property (nonatomic, strong) NSURL *url;
 
 + (NSDateFormatter *)dateFormatter;
-+ (NSArray *)getRepoModels:(NSArray *)reposJSON;
++ (NSArray *)repoModelsFromJSON:(NSArray *)JSON;
 
 - (Repository *)initWithJSON:(NSDictionary *)JSON;
 

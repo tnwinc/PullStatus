@@ -28,7 +28,7 @@
     [client getPath:path parameters:nil
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:NO];
-        self.repositories = [Repository getRepoModels:responseObject];
+        self.repositories = [Repository repoModelsFromJSON:responseObject];
         if (success) success(self.repositories);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:NO];

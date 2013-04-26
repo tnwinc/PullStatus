@@ -16,21 +16,21 @@
     
     self = [super init];
     if (self) {
-        self.name = JSON[@"name"];
+        _name = JSON[@"name"];
         if (JSON[@"description"] != (id)[NSNull null]) {
-            self.descriptionText = JSON[@"description"];
+            _descriptionText = JSON[@"description"];
         } else {
-            self.descriptionText = @"";
+            _descriptionText = @"";
         }
-        self.owner = [[RepositoryOwner alloc] initWithJSON:JSON[@"owner"]];
-        self.cloneUrl = [NSURL URLWithString:JSON[@"clone_url"]];
-        self.createdAt = [formatter dateFromString:JSON[@"created_at"]];
-        self.gitUrl = [NSURL URLWithString:JSON[@"git_url"]];
-        self.htmlUrl = [NSURL URLWithString:JSON[@"html_url"]];
-        self.pushedAt = [formatter dateFromString:JSON[@"pushed_at"]];
-        self.sshUrl = [NSURL URLWithString:JSON[@"ssh_url"]];
-        self.updatedAt = [formatter dateFromString:JSON[@"updated_at"]];
-        self.url = [NSURL URLWithString:JSON[@"url"]];
+        _owner = [[RepositoryOwner alloc] initWithJSON:JSON[@"owner"]];
+        _cloneUrl = [NSURL URLWithString:JSON[@"clone_url"]];
+        _createdAt = [formatter dateFromString:JSON[@"created_at"]];
+        _gitUrl = [NSURL URLWithString:JSON[@"git_url"]];
+        _htmlUrl = [NSURL URLWithString:JSON[@"html_url"]];
+        _pushedAt = [formatter dateFromString:JSON[@"pushed_at"]];
+        _sshUrl = [NSURL URLWithString:JSON[@"ssh_url"]];
+        _updatedAt = [formatter dateFromString:JSON[@"updated_at"]];
+        _url = [NSURL URLWithString:JSON[@"url"]];
     }
     return self;
 }
@@ -58,10 +58,10 @@
     return formatter;
 }
 
-+ (NSArray *)getRepoModels:(NSArray *)reposJSON {
-    NSAssert(reposJSON, @"Must provide an array");
++ (NSArray *)repoModelsFromJSON:(NSArray *)JSON {
+    NSAssert(JSON, @"Must provide an array");
     NSMutableArray *repos = [[NSMutableArray alloc] init];
-    for (NSDictionary *repoJSON in reposJSON) {
+    for (NSDictionary *repoJSON in JSON) {
         [repos addObject:[[Repository alloc] initWithJSON:repoJSON]];
     }
     return [[NSArray alloc] initWithArray:repos];
