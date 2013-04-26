@@ -43,6 +43,11 @@
 
     [self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
+
+    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"oauth_token"];
+    if (token) {
+        [self.httpClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", token]];
+    }
 }
 
 - (void)loadRootViewController {

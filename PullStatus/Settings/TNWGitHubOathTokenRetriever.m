@@ -21,9 +21,10 @@
     [client setAuthorizationHeaderWithUsername:aUser password:password];
     [client postPath:@"/authorizations" parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
           NSMutableDictionary *response = (NSMutableDictionary *) responseObject;
           NSString *token = response[@"token"];
-          [client setDefaultHeader:@"Bearer" value:token];
+          [client setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", token]];
           if (success) success(token);
           
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -38,10 +38,11 @@
                             withPassword:self.passwordTextField.text
                                andClient:self.httpClient
                                  success:^(NSString *token){
-                                     [SVProgressHUD showSuccessWithStatus:@"Authenticated"];
+                                     [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"oauth_token"];
+                                     [SVProgressHUD showSuccessWithStatus:@"Authenticated!"];
                                      [self dismissViewControllerAnimated:YES completion:nil];
                                  } failure:^(NSError *error) {
-                                     [SVProgressHUD showErrorWithStatus:@"Login Failed"];
+                                     [SVProgressHUD showErrorWithStatus:@"Login Failed."];
                                  }];
 }
 @end
