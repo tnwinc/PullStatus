@@ -11,8 +11,9 @@
 
 @interface TNWAuthenicationViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *userNameOrEmailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UITextField *userNameOrEmailTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UIButton *authorizeButton;
 @property AFHTTPClient *httpClient;
 
 - (IBAction)userDidPressAuthorize:(id)sender;

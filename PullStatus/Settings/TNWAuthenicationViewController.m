@@ -11,7 +11,7 @@
 #import "SVProgressHUD.h"
 
 @interface TNWAuthenicationViewController ()
-
+- (void)setAppearance;
 @end
 
 @implementation TNWAuthenicationViewController
@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self setAppearance];
 }
 
 - (IBAction)userDidPressAuthorize:(id)sender {
@@ -45,4 +45,10 @@
                                      [SVProgressHUD showErrorWithStatus:@"Login Failed."];
                                  }];
 }
+
+- (void)setAppearance {
+    UIImage *barButton = [[UIImage imageNamed:@"github-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 34, 0, 5)];
+    [self.authorizeButton setBackgroundImage:barButton forState:UIControlStateNormal];
+}
+
 @end
