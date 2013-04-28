@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
 
-@interface TNWAuthenicationViewController : UIViewController
+@interface TNWAuthenicationViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *userNameOrEmailTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;

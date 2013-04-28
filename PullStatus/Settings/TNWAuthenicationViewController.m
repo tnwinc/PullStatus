@@ -20,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
-        self.httpClient = httpClient;
+        _httpClient = httpClient;
     }
     return self;
 }
@@ -46,8 +46,21 @@
                                  }];
 }
 
+#pragma mark - UITextField Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.userNameOrEmailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (theTextField == self.passwordTextField) {
+        [self userDidPressAuthorize:theTextField];
+    }
+    return YES;
+}
+
+#pragma mark - Appearance
+
 - (void)setAppearance {
-    UIImage *barButton = [[UIImage imageNamed:@"github-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 34, 0, 5)];
+    UIImage *barButton = [[UIImage imageNamed:@"github-dark-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 34, 0, 5)];
     [self.authorizeButton setBackgroundImage:barButton forState:UIControlStateNormal];
 }
 

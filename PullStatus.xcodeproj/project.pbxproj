@@ -60,6 +60,9 @@
 		4B27CE7217218E5600F66E20 /* barButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B27CE6617218E5600F66E20 /* barButtonPressed@2x.png */; };
 		4B534063172DB191003F9AE2 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B534061172DB191003F9AE2 /* octocat.png */; };
 		4B534064172DB191003F9AE2 /* octocat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B534062172DB191003F9AE2 /* octocat@2x.png */; };
+		4B534068172DBA00003F9AE2 /* github-dark-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B534065172DBA00003F9AE2 /* github-dark-button.png */; };
+		4B534069172DBA00003F9AE2 /* github-dark-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B534066172DBA00003F9AE2 /* github-dark-button@2x.png */; };
+		4B53406A172DBA00003F9AE2 /* github-dark-button@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4B534067172DBA00003F9AE2 /* github-dark-button@2x.psd */; };
 		4B86318917297C3400E7D26D /* splash-568h@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4B86318417297C3400E7D26D /* splash-568h@2x.psd */; };
 		4B86318B17297C6B00E7D26D /* icon-57@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4B86318A17297C6B00E7D26D /* icon-57@2x.psd */; };
 		4B882A08172185AC00028131 /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B882A06172185AC00028131 /* navigationbar.png */; };
@@ -178,6 +181,9 @@
 		4B27CE6617218E5600F66E20 /* barButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barButtonPressed@2x.png"; sourceTree = "<group>"; };
 		4B534061172DB191003F9AE2 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat.png; sourceTree = "<group>"; };
 		4B534062172DB191003F9AE2 /* octocat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "octocat@2x.png"; sourceTree = "<group>"; };
+		4B534065172DBA00003F9AE2 /* github-dark-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-dark-button.png"; sourceTree = "<group>"; };
+		4B534066172DBA00003F9AE2 /* github-dark-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-dark-button@2x.png"; sourceTree = "<group>"; };
+		4B534067172DBA00003F9AE2 /* github-dark-button@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "github-dark-button@2x.psd"; sourceTree = "<group>"; };
 		4B86318417297C3400E7D26D /* splash-568h@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "splash-568h@2x.psd"; sourceTree = "<group>"; };
 		4B86318A17297C6B00E7D26D /* icon-57@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "icon-57@2x.psd"; sourceTree = "<group>"; };
 		4B882A06172185AC00028131 /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
@@ -425,6 +431,9 @@
 		4B86317F17297C3400E7D26D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4B534065172DBA00003F9AE2 /* github-dark-button.png */,
+				4B534066172DBA00003F9AE2 /* github-dark-button@2x.png */,
+				4B534067172DBA00003F9AE2 /* github-dark-button@2x.psd */,
 				4B534061172DB191003F9AE2 /* octocat.png */,
 				4B534062172DB191003F9AE2 /* octocat@2x.png */,
 				4BE78F6F172B0B1600D55AE4 /* pr-cell.png */,
@@ -600,6 +609,9 @@
 				4BE78F8A172B13A900D55AE4 /* status-icon-none@2x.png in Resources */,
 				4B534063172DB191003F9AE2 /* octocat.png in Resources */,
 				4B534064172DB191003F9AE2 /* octocat@2x.png in Resources */,
+				4B534068172DBA00003F9AE2 /* github-dark-button.png in Resources */,
+				4B534069172DBA00003F9AE2 /* github-dark-button@2x.png in Resources */,
+				4B53406A172DBA00003F9AE2 /* github-dark-button@2x.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
