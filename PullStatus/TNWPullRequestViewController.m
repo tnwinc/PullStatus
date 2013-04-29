@@ -93,15 +93,14 @@
 
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        
-        UIImage *cellBackgroundImage = [[UIImage imageNamed:@"pr-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 7.0, 12.0, 7.0)];
-        UIImageView *cellBackgroundView = [[UIImageView alloc] initWithFrame:cell.frame];
-        cellBackgroundView.image = cellBackgroundImage;
-        cell.backgroundView = cellBackgroundView;
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     }
 
+    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithFrame:cell.frame];
+    cellBackgroundView.image = [[UIImage imageNamed:@"pr-cell.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 7.0, 12.0, 7.0)];
+    cell.backgroundView = cellBackgroundView;
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    
     NSInteger index = indexPath.item;
     NSDictionary *pullRequest = [self.pullRequests objectAtIndex:index];
 
