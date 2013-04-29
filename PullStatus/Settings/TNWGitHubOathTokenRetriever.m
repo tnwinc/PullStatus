@@ -15,8 +15,8 @@
                           success:(void (^)(NSString *))success
                           failure:(void (^)(NSError *))failure {
     
-    NSDictionary *params = @{ @"client_id": kClientID, @"client_secret": kClientSecret, @"scopes": @[@"repo"] };
-
+    NSDictionary *params = @{ @"client_id": kGitHubApiClientID, @"client_secret": kGitHubApiClientSecret, @"scopes": @[@"repo"] };
+    
     client.parameterEncoding = AFJSONParameterEncoding;
     [client setAuthorizationHeaderWithUsername:aUser password:password];
     [client postPath:@"/authorizations" parameters:params

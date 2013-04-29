@@ -6,5 +6,8 @@
 //  Copyright (c) 2013 The Network. All rights reserved.
 //
 
-extern NSString *const kClientID;
-extern NSString *const kClientSecret;
+#define STRINGIZE_INNER(x) #x
+#define STRINGIZE(x) STRINGIZE_INNER(x)
+
+#define kGitHubApiClientID @ STRINGIZE(GITHUB_API_CLIENT_ID)
+#define kGitHubApiClientSecret @"GITHUB_API_CLIENT_SECRET"

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TNWHttpClient.h"
+#import "Constants.h"
 
 @interface TNWGitHubOathTokenRetriever : NSObject
 
